@@ -21,6 +21,7 @@ function CheckoutContent() {
     minute: "",
     geburtsort: "",
     agb: false,
+    widerruf: false,
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -43,6 +44,8 @@ function CheckoutContent() {
       return setError("Bitte gib deinen Geburtsort ein.");
     if (!form.agb)
       return setError("Bitte akzeptiere die AGB.");
+    if (!form.widerruf)
+      return setError("Bitte bestätige die Widerrufsbelehrung.");
 
     setLoading(true);
 
@@ -231,11 +234,27 @@ function CheckoutContent() {
               </span>
             </label>
 
+            {/* Widerrufsrecht */}
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={form.widerruf}
+                onChange={(e) => update("widerruf", e.target.checked)}
+                className="mt-1 w-5 h-5 shrink-0 accent-gold"
+                disabled={loading}
+              />
+              <span className="text-sm text-muted">
+                Ich stimme zu, dass die Ausführung des Vertrags sofort beginnt,
+                und mir ist bekannt, dass ich mein Widerrufsrecht mit Zustellung
+                der Analyse verliere.
+              </span>
+            </label>
+
             {error && <p className="text-red-400 text-sm">{error}</p>}
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || !form.agb || !form.widerruf}
               className="w-full h-14 bg-gold hover:bg-gold-hover disabled:opacity-50 disabled:cursor-not-allowed text-bg font-semibold text-lg rounded-xl transition-colors mt-2"
             >
               {loading ? (
