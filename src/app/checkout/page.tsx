@@ -4,6 +4,7 @@ import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { PRICES } from "@/lib/constants";
+import { createCheckoutSession } from "@/lib/api";
 
 function CheckoutContent() {
   const searchParams = useSearchParams();
@@ -22,12 +23,13 @@ function CheckoutContent() {
     agb: false,
   });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   function update(field: string, value: string | boolean) {
     setForm((f) => ({ ...f, [field]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
 
@@ -42,10 +44,27 @@ function CheckoutContent() {
     if (!form.agb)
       return setError("Bitte akzeptiere die AGB.");
 
-    // TODO: Stripe Checkout integration
-    alert(
-      `Stripe Checkout wird eingerichtet...\n\nVersion: ${version}\nPreis: ${price}\u20AC\n\nDie Stripe-Integration wird im nächsten Schritt konfiguriert.`
-    );
+    setLoading(true);
+
+    try {
+      const geburtsdatum = `${form.tag.padStart(2, "0")}.${form.monat.padStart(2, "0")}.${form.jahr}`;
+      const geburtszeit = `${form.stunde.padStart(2, "0")}:${form.minute.padStart(2, "0")}`;
+
+      const { url } = await createCheckoutSession({
+        name: form.name,
+        email: form.email,
+        geburtsdatum,
+        geburtszeit,
+        geburtsort: form.geburtsort,
+        version,
+      });
+
+      // Redirect zu Stripe Checkout
+      window.location.href = url;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Ein Fehler ist aufgetreten.");
+      setLoading(false);
+    }
   }
 
   const inputClass =
@@ -94,6 +113,7 @@ function CheckoutContent() {
                 value={form.name}
                 onChange={(e) => update("name", e.target.value)}
                 className={inputClass}
+                disabled={loading}
               />
             </div>
 
@@ -105,6 +125,7 @@ function CheckoutContent() {
                 value={form.email}
                 onChange={(e) => update("email", e.target.value)}
                 className={inputClass}
+                disabled={loading}
               />
             </div>
 
@@ -120,6 +141,7 @@ function CheckoutContent() {
                     update("tag", e.target.value.replace(/\D/g, "").slice(0, 2))
                   }
                   className={`${inputClass} text-center`}
+                  disabled={loading}
                 />
                 <input
                   type="text"
@@ -130,6 +152,7 @@ function CheckoutContent() {
                     update("monat", e.target.value.replace(/\D/g, "").slice(0, 2))
                   }
                   className={`${inputClass} text-center`}
+                  disabled={loading}
                 />
                 <input
                   type="text"
@@ -140,6 +163,7 @@ function CheckoutContent() {
                     update("jahr", e.target.value.replace(/\D/g, "").slice(0, 4))
                   }
                   className={`${inputClass} text-center flex-[1.5]`}
+                  disabled={loading}
                 />
               </div>
             </div>
@@ -156,6 +180,7 @@ function CheckoutContent() {
                     update("stunde", e.target.value.replace(/\D/g, "").slice(0, 2))
                   }
                   className={`${inputClass} text-center`}
+                  disabled={loading}
                 />
                 <span className="text-muted text-xl">:</span>
                 <input
@@ -167,6 +192,7 @@ function CheckoutContent() {
                     update("minute", e.target.value.replace(/\D/g, "").slice(0, 2))
                   }
                   className={`${inputClass} text-center`}
+                  disabled={loading}
                 />
               </div>
             </div>
@@ -179,6 +205,7 @@ function CheckoutContent() {
                 value={form.geburtsort}
                 onChange={(e) => update("geburtsort", e.target.value)}
                 className={inputClass}
+                disabled={loading}
               />
             </div>
 
@@ -189,6 +216,7 @@ function CheckoutContent() {
                 checked={form.agb}
                 onChange={(e) => update("agb", e.target.checked)}
                 className="mt-1 w-5 h-5 shrink-0 accent-gold"
+                disabled={loading}
               />
               <span className="text-sm text-muted">
                 Ich akzeptiere die{" "}
@@ -207,9 +235,20 @@ function CheckoutContent() {
 
             <button
               type="submit"
-              className="w-full h-14 bg-gold hover:bg-gold-hover text-bg font-semibold text-lg rounded-xl transition-colors mt-2"
+              disabled={loading}
+              className="w-full h-14 bg-gold hover:bg-gold-hover disabled:opacity-50 disabled:cursor-not-allowed text-bg font-semibold text-lg rounded-xl transition-colors mt-2"
             >
-              Jetzt bezahlen &mdash; {price}&euro;
+              {loading ? (
+                <span className="inline-flex items-center gap-2">
+                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                  Weiterleitung zu Stripe...
+                </span>
+              ) : (
+                <>Jetzt bezahlen &mdash; {price}&euro;</>
+              )}
             </button>
           </form>
 

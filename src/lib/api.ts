@@ -19,6 +19,11 @@ export interface BestellungStatusResponse {
   erstellt_am: string;
 }
 
+export interface CheckoutSessionResponse {
+  url: string;
+  session_id: string;
+}
+
 export async function gratisCheck(geburtsdatum: string): Promise<GratisCheckResponse> {
   const res = await fetch(`${API_URL}/api/gratis-check`, {
     method: "POST",
@@ -28,6 +33,26 @@ export async function gratisCheck(geburtsdatum: string): Promise<GratisCheckResp
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(err.detail || "Fehler beim Check");
+  }
+  return res.json();
+}
+
+export async function createCheckoutSession(data: {
+  name: string;
+  email: string;
+  geburtsdatum: string;
+  geburtszeit: string;
+  geburtsort: string;
+  version: "normal" | "pro";
+}): Promise<CheckoutSessionResponse> {
+  const res = await fetch(`${API_URL}/api/create-checkout-session`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || "Fehler bei der Zahlung");
   }
   return res.json();
 }
