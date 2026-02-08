@@ -63,7 +63,7 @@ export default function CheckResult({ result, geburtsdatum }: Props) {
           ) : (
             <p className="text-lg">
               Dein Sternzeichen <span className="text-green-400 font-semibold">stimmt</span> &mdash;
-              du bist tatsaechlich {result.siderisch}.
+              du bist tatsächlich {result.siderisch}.
             </p>
           )}
         </div>
@@ -79,9 +79,9 @@ export default function CheckResult({ result, geburtsdatum }: Props) {
         >
           <p className="font-semibold text-gold mb-1">Ophiuchus entdeckt</p>
           <p className="text-sm text-muted">
-            Deine Sonne steht im Bereich von Ophiuchus (Schlangentraeger) &mdash;
+            Deine Sonne steht im Bereich von Ophiuchus (Schlangenträger) &mdash;
             einem 13. Sternbild, das in der westlichen Astrologie ignoriert wird.
-            In deiner vollen Analyse erfaehrst du mehr.
+            In deiner vollen Analyse erfährst du mehr.
           </p>
         </motion.div>
       )}

@@ -10,27 +10,27 @@ const faqItems = [
   {
     question: "Was ist der Unterschied zwischen tropischer und siderischer Astrologie?",
     answer:
-      "Die tropische Astrologie (westliches Horoskop) basiert auf den Jahreszeiten. Die siderische Astrologie basiert auf den tatsaechlichen Sternpositionen. Durch die Praezession der Erdachse haben sich diese um ca. 24 Grad verschoben \u2014 deshalb stimmen die meisten Sternzeichen nicht mehr.",
+      "Die tropische Astrologie (westliches Horoskop) basiert auf den Jahreszeiten. Die siderische Astrologie basiert auf den tatsächlichen Sternpositionen. Durch die Präzession der Erdachse haben sich diese um ca. 24 Grad verschoben \u2014 deshalb stimmen die meisten Sternzeichen nicht mehr.",
   },
   {
     question: "Wie lange dauert es, bis ich meine Analyse erhalte?",
     answer:
-      "Deine Analyse wird automatisch berechnet und als PDF per Email zugesendet. In der Regel erhaeltst du sie innerhalb weniger Minuten nach der Bestellung.",
+      "Deine Analyse wird automatisch berechnet und als PDF per Email zugesendet. In der Regel erhältst du sie innerhalb weniger Minuten nach der Bestellung.",
   },
   {
     question: "Brauche ich meine genaue Geburtszeit?",
     answer:
-      "Ja, fuer eine praezise Berechnung von Mond, Aszendent und Human Design ist die Geburtszeit wichtig. Falls du sie nicht kennst, kannst du beim Standesamt deines Geburtsortes nachfragen.",
+      "Ja, für eine präzise Berechnung von Mond, Aszendent und Human Design ist die Geburtszeit wichtig. Falls du sie nicht kennst, kannst du beim Standesamt deines Geburtsortes nachfragen.",
   },
   {
     question: "Was unterscheidet die Normal- von der Pro-Version?",
     answer:
-      "Die Normal-Version umfasst die wichtigsten Berechnungen: Sonne, Mond, Aszendent, Lebenszahl und Elementar-Analyse (12-15 Seiten). Die Pro-Version geht deutlich tiefer: alle Planeten, 12 Haeuser, Aegyptische Dekane, Human Design, Aspekte, Nakshatras und eine umfassende Ma'at-Synthese (50-60 Seiten).",
+      "Die Normal-Version umfasst die wichtigsten Berechnungen: Sonne, Mond, Aszendent, Lebenszahl und Elementar-Analyse (12-15 Seiten). Die Pro-Version geht deutlich tiefer: alle Planeten, 12 Häuser, Ägyptische Dekane, Human Design, Aspekte, Nakshatras und eine umfassende Ma'at-Synthese (50-60 Seiten).",
   },
   {
     question: "Ist die Berechnung wissenschaftlich fundiert?",
     answer:
-      "Die siderische Berechnung basiert auf dem Lahiri-Ayanamsa, dem international anerkannten Standard fuer astronomisch korrekte Sternpositionen. Wir nutzen die Swiss Ephemeris \u2014 die gleiche Datenbank, die auch von Observatorien verwendet wird.",
+      "Die siderische Berechnung basiert auf dem Lahiri-Ayanamsa, dem international anerkannten Standard für astronomisch korrekte Sternpositionen. Wir nutzen die Swiss Ephemeris \u2014 die gleiche Datenbank, die auch von Observatorien verwendet wird.",
   },
   {
     question: "Kann ich die Analyse als Geschenk bestellen?",
@@ -53,10 +53,10 @@ export default function AnalysePage() {
             Deine Analyse
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-            Waehle dein Profil
+            Wähle dein Profil
           </h1>
           <p className="mt-4 text-lg text-muted max-w-lg mx-auto">
-            5 Systeme. 1 PDF. Die Wahrheit ueber dein kosmisches Profil.
+            5 Systeme. 1 PDF. Die Wahrheit über dein kosmisches Profil.
           </p>
         </motion.div>
 
@@ -88,7 +88,7 @@ export default function AnalysePage() {
         <AnimateOnScroll>
           <div className="mb-8 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold">
-              Haeufige Fragen
+              Häufige Fragen
             </h2>
           </div>
         </AnimateOnScroll>

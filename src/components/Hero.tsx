@@ -39,7 +39,7 @@ export default function Hero() {
           className="mt-6 text-lg sm:text-xl text-muted max-w-xl mx-auto leading-relaxed"
         >
           86% aller Menschen haben ein anderes Sternzeichen als sie glauben.
-          Finde in 10 Sekunden heraus, ob du dazugehoerst.
+          Finde in 10 Sekunden heraus, ob du dazugehörst.
         </motion.p>
 
         <motion.div

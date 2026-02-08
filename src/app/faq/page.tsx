@@ -8,27 +8,27 @@ const faqItems = [
   {
     question: "Was ist siderische Astrologie?",
     answer:
-      "Siderische Astrologie berechnet die Planetenpositionen anhand der tatsaechlichen Sternbilder am Himmel. Im Gegensatz zur tropischen (westlichen) Astrologie beruecksichtigt sie die Praezession der Erdachse \u2014 eine langsame Kreiselbewegung, die dazu fuehrt, dass sich die Sternbilder ueber Jahrhunderte verschieben.",
+      "Siderische Astrologie berechnet die Planetenpositionen anhand der tatsächlichen Sternbilder am Himmel. Im Gegensatz zur tropischen (westlichen) Astrologie berücksichtigt sie die Präzession der Erdachse \u2014 eine langsame Kreiselbewegung, die dazu führt, dass sich die Sternbilder über Jahrhunderte verschieben.",
   },
   {
     question: "Warum stimmt mein Sternzeichen nicht?",
     answer:
-      "Vor ca. 2.000 Jahren lagen tropische und siderische Zeichen noch uebereinander. Durch die Praezession hat sich der Fruehlingspunkt um ca. 24 Grad verschoben. Deshalb zeigt dein westliches Horoskop ein anderes Zeichen als die Sterne tatsaechlich anzeigen. Bei 86% der Menschen weicht das siderische Zeichen vom tropischen ab.",
+      "Vor ca. 2.000 Jahren lagen tropische und siderische Zeichen noch übereinander. Durch die Präzession hat sich der Frühlingspunkt um ca. 24 Grad verschoben. Deshalb zeigt dein westliches Horoskop ein anderes Zeichen als die Sterne tatsächlich anzeigen. Bei 86% der Menschen weicht das siderische Zeichen vom tropischen ab.",
   },
   {
     question: "Was ist der Lahiri-Ayanamsa?",
     answer:
-      "Der Lahiri-Ayanamsa ist der international anerkannte Standard zur Berechnung der Differenz zwischen tropischem und siderischem Tierkreis. Er wird von der indischen Regierung offiziell verwendet und gilt als die praeziseste Methode.",
+      "Der Lahiri-Ayanamsa ist der international anerkannte Standard zur Berechnung der Differenz zwischen tropischem und siderischem Tierkreis. Er wird von der indischen Regierung offiziell verwendet und gilt als die präziseste Methode.",
   },
   {
     question: "Brauche ich meine genaue Geburtszeit?",
     answer:
-      "Fuer den kostenlosen Gratis-Check reicht dein Geburtsdatum. Fuer die volle Analyse mit Mond, Aszendent und Human Design ist die genaue Geburtszeit wichtig. Du findest sie auf deiner Geburtsurkunde oder beim Standesamt deines Geburtsortes.",
+      "Für den kostenlosen Gratis-Check reicht dein Geburtsdatum. Für die volle Analyse mit Mond, Aszendent und Human Design ist die genaue Geburtszeit wichtig. Du findest sie auf deiner Geburtsurkunde oder beim Standesamt deines Geburtsortes.",
   },
   {
     question: "Wie genau sind die Berechnungen?",
     answer:
-      "Wir nutzen die Swiss Ephemeris \u2014 die weltweit praeziseste astronomische Datenbank, die auch von Observatorien und der NASA verwendet wird. Die Berechnungen sind auf Bogenminuten genau.",
+      "Wir nutzen die Swiss Ephemeris \u2014 die weltweit präziseste astronomische Datenbank, die auch von Observatorien und der NASA verwendet wird. Die Berechnungen sind auf Bogenminuten genau.",
   },
   {
     question: "Was beinhaltet die Normal-Analyse?",
@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "Was beinhaltet die Pro-Analyse?",
     answer:
-      "Die Pro-Analyse (89\u20AC) enthaelt alles aus der Normal-Version plus: alle Planeten & 12 Haeuser, Aegyptischer Waechter & Dekan, Human Design Typ & Strategie, Aspekte & Nakshatras, Ma'at-Synthese und Journaling-Impulse. 50-60 Seiten als PDF.",
+      "Die Pro-Analyse (89\u20AC) enthält alles aus der Normal-Version plus: alle Planeten & 12 Häuser, Ägyptischer Wächter & Dekan, Human Design Typ & Strategie, Aspekte & Nakshatras, Ma'at-Synthese und Journaling-Impulse. 50-60 Seiten als PDF.",
   },
   {
     question: "Wie erhalte ich meine Analyse?",
@@ -46,24 +46,24 @@ const faqItems = [
       "Nach der Bestellung wird deine Analyse automatisch berechnet und als PDF per Email zugesendet. In der Regel dauert dies wenige Minuten.",
   },
   {
-    question: "Gibt es eine Geld-zurueck-Garantie?",
+    question: "Gibt es eine Geld-zurück-Garantie?",
     answer:
-      "Ja, wir bieten eine 14-taegige Geld-zurueck-Garantie. Wenn du mit deiner Analyse nicht zufrieden bist, erstatten wir den vollen Kaufpreis.",
+      "Ja, wir bieten eine 14-tägige Geld-zurück-Garantie. Wenn du mit deiner Analyse nicht zufrieden bist, erstatten wir den vollen Kaufpreis.",
   },
   {
     question: "Was ist Human Design?",
     answer:
-      "Human Design ist ein System, das Astrologie, I Ging, Kabbala und Quantenphysik verbindet. Es berechnet deinen energetischen Typ, deine Strategie und innere Autoritaet \u2014 praktische Werkzeuge fuer bessere Entscheidungen im Alltag.",
+      "Human Design ist ein System, das Astrologie, I Ging, Kabbala und Quantenphysik verbindet. Es berechnet deinen energetischen Typ, deine Strategie und innere Autorität \u2014 praktische Werkzeuge für bessere Entscheidungen im Alltag.",
   },
   {
-    question: "Was sind Aegyptische Dekane?",
+    question: "Was sind Ägyptische Dekane?",
     answer:
-      "Die Aegyptischen Dekane sind ein 4.000 Jahre altes System aus dem Alten Aegypten. Jedes Sternzeichen wird in drei Dekane (je 10 Grad) unterteilt, die jeweils einem goettlichen Waechter zugeordnet sind. In der Pro-Analyse erfaehrst du deinen persoenlichen Waechter.",
+      "Die Ägyptischen Dekane sind ein 4.000 Jahre altes System aus dem Alten Ägypten. Jedes Sternzeichen wird in drei Dekane (je 10 Grad) unterteilt, die jeweils einem göttlichen Wächter zugeordnet sind. In der Pro-Analyse erfährst du deinen persönlichen Wächter.",
   },
   {
     question: "Werden meine Daten gespeichert?",
     answer:
-      "Deine Geburtsdaten werden ausschliesslich zur Berechnung deiner Analyse verwendet. Wir speichern keine IP-Adressen im Klartext (nur als anonymisierter Hash) und geben keine Daten an Dritte weiter. Alle Daten werden auf Servern in Deutschland verarbeitet.",
+      "Deine Geburtsdaten werden ausschließlich zur Berechnung deiner Analyse verwendet. Wir speichern keine IP-Adressen im Klartext (nur als anonymisierter Hash) und geben keine Daten an Dritte weiter. Alle Daten werden auf Servern in Deutschland verarbeitet.",
   },
 ];
 
@@ -78,10 +78,10 @@ export default function FAQPage() {
           className="text-center mb-16"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-            Haeufige Fragen
+            Häufige Fragen
           </h1>
           <p className="mt-4 text-lg text-muted">
-            Alles, was du ueber AstroMaster wissen musst.
+            Alles, was du über AstroMaster wissen musst.
           </p>
         </motion.div>
 

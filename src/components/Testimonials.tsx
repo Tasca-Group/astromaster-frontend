@@ -5,7 +5,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 const testimonials = [
   {
     name: "Laura M.",
-    text: "Ich war mein ganzes Leben lang Jungfrau. Jetzt weiss ich, dass ich eigentlich Loewe bin &mdash; und ploetzlich ergibt alles Sinn.",
+    text: "Ich war mein ganzes Leben lang Jungfrau. Jetzt weiß ich, dass ich eigentlich Löwe bin &mdash; und plötzlich ergibt alles Sinn.",
     location: "Berlin",
   },
   {
@@ -15,8 +15,8 @@ const testimonials = [
   },
   {
     name: "Sarah P.",
-    text: "Endlich eine Astrologie-Seite, die auf echten astronomischen Daten basiert. Das PDF ist wunderschoen gestaltet.",
-    location: "Zuerich",
+    text: "Endlich eine Astrologie-Seite, die auf echten astronomischen Daten basiert. Das PDF ist wunderschön gestaltet.",
+    location: "Zürich",
   },
 ];
 

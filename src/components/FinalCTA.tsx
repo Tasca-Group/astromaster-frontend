@@ -9,7 +9,7 @@ export default function FinalCTA() {
       <div className="max-w-3xl mx-auto text-center">
         <AnimateOnScroll>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Bereit fuer
+            Bereit für
             <br />
             <span className="text-gold">die Wahrheit?</span>
           </h2>
@@ -21,7 +21,7 @@ export default function FinalCTA() {
             href="/check"
             className="inline-block mt-10 bg-gold hover:bg-gold-hover text-bg font-semibold px-10 py-4 rounded-lg text-lg transition-colors"
           >
-            Jetzt pruefen &rarr;
+            Jetzt prüfen &rarr;
           </Link>
         </AnimateOnScroll>
       </div>

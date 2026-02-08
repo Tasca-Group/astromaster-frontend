@@ -26,7 +26,7 @@ export default function ProblemSection() {
         <AnimateOnScroll delay={0.15}>
           <p className="mt-6 text-lg text-muted max-w-2xl leading-relaxed">
             Dein Horoskop basiert auf dem tropischen System &mdash; einer 2.000 Jahre alten
-            Berechnung, die die Praezession der Erdachse ignoriert. Seitdem hat sich
+            Berechnung, die die Präzession der Erdachse ignoriert. Seitdem hat sich
             der Sternenhimmel um ca. 24 Grad verschoben. Das bedeutet: Die Sterne
             stehen heute woanders als dein Horoskop behauptet.
           </p>

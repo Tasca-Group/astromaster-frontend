@@ -32,7 +32,7 @@ function CheckoutContent() {
     setError("");
 
     if (!form.name.trim()) return setError("Bitte gib deinen Namen ein.");
-    if (!form.email.includes("@")) return setError("Bitte gib eine gueltige Email ein.");
+    if (!form.email.includes("@")) return setError("Bitte gib eine gültige Email ein.");
     if (!form.tag || !form.monat || !form.jahr)
       return setError("Bitte gib dein Geburtsdatum ein.");
     if (!form.stunde || !form.minute)
@@ -44,7 +44,7 @@ function CheckoutContent() {
 
     // TODO: Stripe Checkout integration
     alert(
-      `Stripe Checkout wird eingerichtet...\n\nVersion: ${version}\nPreis: ${price}\u20AC\n\nDie Stripe-Integration wird im naechsten Schritt konfiguriert.`
+      `Stripe Checkout wird eingerichtet...\n\nVersion: ${version}\nPreis: ${price}\u20AC\n\nDie Stripe-Integration wird im nächsten Schritt konfiguriert.`
     );
   }
 
@@ -77,7 +77,7 @@ function CheckoutContent() {
               <p className="text-sm text-muted">
                 Upgrade auf{" "}
                 <a href="/checkout?version=pro" className="text-gold font-medium">
-                  Pro fuer {PRICES.pro}&euro;
+                  Pro für {PRICES.pro}&euro;
                 </a>{" "}
                 &mdash; 4x mehr Inhalt
               </p>
@@ -197,7 +197,7 @@ function CheckoutContent() {
                 </a>{" "}
                 und{" "}
                 <a href="/datenschutz" className="text-gold hover:underline">
-                  Datenschutzerklaerung
+                  Datenschutzerklärung
                 </a>
                 .
               </span>

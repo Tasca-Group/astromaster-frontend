@@ -27,9 +27,9 @@ export default function MissionPage() {
             <div className="p-6 sm:p-8 rounded-2xl bg-card border border-border">
               <h2 className="text-xl font-semibold mb-4">Das Problem</h2>
               <p className="text-muted leading-relaxed">
-                Milliarden von Menschen weltweit lesen taeglich ihr Horoskop. Was die
+                Milliarden von Menschen weltweit lesen täglich ihr Horoskop. Was die
                 wenigsten wissen: Die westliche Astrologie basiert auf einem 2.000
-                Jahre alten System, das die Praezession der Erdachse ignoriert. Die
+                Jahre alten System, das die Präzession der Erdachse ignoriert. Die
                 Sterne haben sich seitdem um ca. 24 Grad verschoben. Das bedeutet:
                 86% aller Menschen haben ein anderes Sternzeichen als sie glauben.
               </p>
@@ -38,11 +38,11 @@ export default function MissionPage() {
 
           <AnimateOnScroll>
             <div className="p-6 sm:p-8 rounded-2xl bg-card border border-border">
-              <h2 className="text-xl font-semibold mb-4">Unsere Loesung</h2>
+              <h2 className="text-xl font-semibold mb-4">Unsere Lösung</h2>
               <p className="text-muted leading-relaxed">
                 AstroMaster nutzt siderische Astrologie mit dem Lahiri-Ayanamsa &mdash;
-                dem internationalen Standard fuer astronomisch korrekte Berechnungen.
-                Dazu kombinieren wir 4 weitere Systeme: Numerologie, Aegyptische
+                dem internationalen Standard für astronomisch korrekte Berechnungen.
+                Dazu kombinieren wir 4 weitere Systeme: Numerologie, Ägyptische
                 Dekane, Human Design und Elementar-Analyse. Das Ergebnis ist das
                 umfassendste kosmische Profil, das du je gesehen hast.
               </p>

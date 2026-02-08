@@ -6,27 +6,27 @@ const systems = [
   {
     title: "Siderische Astrologie",
     description:
-      "Das astronomisch korrekte System. Berechnet nach den tatsaechlichen Sternpositionen mit Lahiri-Ayanamsa.",
+      "Das astronomisch korrekte System. Berechnet nach den tatsächlichen Sternpositionen mit Lahiri-Ayanamsa.",
   },
   {
     title: "Numerologie",
     description:
-      "Deine Lebenszahl entschluesselt deinen Lebensweg, verborgene Talente und karmische Lektionen.",
+      "Deine Lebenszahl entschlüsselt deinen Lebensweg, verborgene Talente und karmische Lektionen.",
   },
   {
-    title: "Aegyptische Dekane",
+    title: "Ägyptische Dekane",
     description:
-      "37 Dekane offenbaren deinen kosmischen Waechter &mdash; eine 4.000 Jahre alte Tradition aus dem Alten Aegypten.",
+      "37 Dekane offenbaren deinen kosmischen Wächter &mdash; eine 4.000 Jahre alte Tradition aus dem Alten Ägypten.",
   },
   {
     title: "Human Design",
     description:
-      "Dein energetischer Bauplan: Typ, Strategie und Autoritaet fuer authentische Entscheidungen.",
+      "Dein energetischer Bauplan: Typ, Strategie und Autorität für authentische Entscheidungen.",
   },
   {
     title: "Elementar-Analyse",
     description:
-      "Die Balance der fuenf Elemente in deinem Chart zeigt deine natuerlichen Staerken und blinden Flecken.",
+      "Die Balance der fünf Elemente in deinem Chart zeigt deine natürlichen Stärken und blinden Flecken.",
   },
 ];
 

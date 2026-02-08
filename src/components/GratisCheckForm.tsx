@@ -41,7 +41,7 @@ export default function GratisCheckForm({ onSubmit, loading }: Props) {
     const j = parseInt(jahr, 10);
 
     if (!t || !m || !j || tag.length < 1 || monat.length < 1 || jahr.length !== 4) {
-      setError("Bitte gib ein vollstaendiges Datum ein.");
+      setError("Bitte gib ein vollständiges Datum ein.");
       return;
     }
     if (t < 1 || t > 31) {

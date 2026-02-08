@@ -16,8 +16,8 @@ export const PRODUCT_FEATURES = {
   ],
   pro: [
     "Alles aus der Normal-Version",
-    "Alle Planeten & 12 Haeuser",
-    "Aegyptischer Waechter & Dekan",
+    "Alle Planeten & 12 Häuser",
+    "Ägyptischer Wächter & Dekan",
     "Human Design Typ & Strategie",
     "Aspekte & Nakshatras",
     "Ma'at-Synthese & Journaling",

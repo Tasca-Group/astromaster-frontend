@@ -26,7 +26,7 @@ export default function BestaetigungPage() {
 
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Vielen Dank!</h1>
           <p className="text-lg text-muted mb-8">
-            Deine Bestellung ist eingegangen. Du erhaeltst deine kosmische Analyse
+            Deine Bestellung ist eingegangen. Du erhältst deine kosmische Analyse
             innerhalb von 24 Stunden per Email.
           </p>
 
@@ -35,7 +35,7 @@ export default function BestaetigungPage() {
             <div className="space-y-4">
               {[
                 { label: "Bestellung eingegangen", done: true },
-                { label: "Berechnung laeuft", done: false, active: true },
+                { label: "Berechnung läuft", done: false, active: true },
                 { label: "PDF wird erstellt", done: false },
                 { label: "Email versendet", done: false },
               ].map((step, i) => (
@@ -74,7 +74,7 @@ export default function BestaetigungPage() {
             href="/"
             className="text-muted hover:text-white text-sm transition-colors"
           >
-            &larr; Zurueck zur Startseite
+            &larr; Zurück zur Startseite
           </Link>
         </motion.div>
       </div>
