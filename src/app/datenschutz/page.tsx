@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function DatenschutzPage() {
   return (
     <section className="min-h-screen pt-24 pb-16 px-6">

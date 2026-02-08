@@ -13,7 +13,6 @@ function BestaetigungContent() {
 
   const [orderId, setOrderId] = useState<string | null>(null);
   const [status, setStatus] = useState<BestellungStatusResponse | null>(null);
-  const [error, setError] = useState("");
   const [polling, setPolling] = useState(true);
 
   // Schritt 1: Bestellungs-ID aus Stripe Session holen
