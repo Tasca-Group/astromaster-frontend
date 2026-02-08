@@ -1,0 +1,60 @@
+import { API_URL } from "./constants";
+
+export interface GratisCheckResponse {
+  tropisch: string;
+  siderisch: string;
+  abweichung: boolean;
+  ophiuchus: boolean;
+}
+
+export interface BestellungResponse {
+  id: string;
+  status: string;
+}
+
+export interface BestellungStatusResponse {
+  id: string;
+  status: "neu" | "berechne" | "fertig" | "fehler";
+  pdf_bereit: boolean;
+  erstellt_am: string;
+}
+
+export async function gratisCheck(geburtsdatum: string): Promise<GratisCheckResponse> {
+  const res = await fetch(`${API_URL}/api/gratis-check`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ geburtsdatum }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || "Fehler beim Check");
+  }
+  return res.json();
+}
+
+export async function createOrder(data: {
+  name: string;
+  email: string;
+  geburtsdatum: string;
+  geburtszeit: string;
+  geburtsort: string;
+  version: "normal" | "pro";
+  stripe_session_id?: string;
+}): Promise<BestellungResponse> {
+  const res = await fetch(`${API_URL}/api/bestellung`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || "Fehler bei der Bestellung");
+  }
+  return res.json();
+}
+
+export async function getOrderStatus(id: string): Promise<BestellungStatusResponse> {
+  const res = await fetch(`${API_URL}/api/bestellung/${id}/status`);
+  if (!res.ok) throw new Error("Status nicht gefunden");
+  return res.json();
+}
