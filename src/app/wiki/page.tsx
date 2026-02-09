@@ -1,12 +1,5 @@
-import type { Metadata } from "next";
-import WikiOverview from "./WikiOverview";
-
-export const metadata: Metadata = {
-  title: "AstroMaster Wiki — Kosmisches Wissen",
-  description:
-    "Dein Wissensportal für siderische Astrologie, Numerologie, ägyptische Dekane, Human Design, Chakren und Elementar-Analyse. Suche, entdecke, verstehe.",
-};
+import { redirect } from "next/navigation";
 
 export default function WikiPage() {
-  return <WikiOverview />;
+  redirect("/archiv");
 }

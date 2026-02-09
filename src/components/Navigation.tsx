@@ -26,7 +26,7 @@ export default function Navigation() {
   const navLinks = [
     { href: "/#systeme", label: "Systeme" },
     { href: "/analyse", label: "Analyse" },
-    { href: "/wiki", label: "Wiki" },
+    { href: "/archiv", label: "Sternarchiv" },
     { href: "/mission", label: "Mission" },
     { href: "/faq", label: "FAQ" },
   ];

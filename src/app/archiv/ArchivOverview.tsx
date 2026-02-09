@@ -137,8 +137,8 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
       className="mb-10"
     >
       {/* Row Header */}
-      <div className="flex items-center justify-between mb-4 px-6 sm:px-0">
-        <Link href={`/archiv-test/${category.id}`} className="flex items-center gap-3 group">
+      <div className="flex items-center justify-between mb-1.5 px-6 sm:px-0">
+        <Link href={`/archiv/${category.id}`} className="flex items-center gap-3 group">
           <Image
             src={category.icon}
             alt={category.title}
@@ -150,7 +150,7 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
           <span className="text-xs text-muted bg-card px-2 py-0.5 rounded-full border border-border">
             {category.articles.length}
           </span>
-          <span className="text-xs text-muted group-hover:text-gold transition-colors hidden sm:inline">
+          <span className="text-xs text-muted group-hover:text-gold transition-colors">
             Alle &rarr;
           </span>
         </Link>
@@ -174,6 +174,9 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
         </div>
       </div>
 
+      {/* Category Description */}
+      <p className="text-xs text-muted/70 mb-4 px-6 sm:px-0 pl-[52px] sm:pl-[43px]">{category.description}</p>
+
       {/* Scroll Container */}
       <div className="relative group">
         {/* Gradient fades */}
@@ -189,7 +192,7 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
           className="flex gap-4 overflow-x-auto scrollbar-none px-6 sm:px-0 snap-x snap-mandatory sm:snap-none"
         >
           {category.articles.map((article, i) => (
-            <ArticleCard key={article.href} article={article} index={i} />
+            <ArticleCard key={article.href} article={article} index={i} categoryIcon={category.icon} />
           ))}
           {/* Spacer for mobile scroll padding */}
           <div className="sm:hidden shrink-0 w-2" />
@@ -200,8 +203,7 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
 }
 
 /* ─── Article Card ─── */
-function ArticleCard({ article, index }: { article: WikiArticle; index: number }) {
-  // Estimate reading time from sections count
+function ArticleCard({ article, index, categoryIcon }: { article: WikiArticle; index: number; categoryIcon: string }) {
   const readingTime = Math.max(3, article.sections.length * 2);
 
   return (
@@ -210,11 +212,18 @@ function ArticleCard({ article, index }: { article: WikiArticle; index: number }
       className="group shrink-0 w-[280px] sm:w-[300px] snap-start"
     >
       <div className="h-full p-5 rounded-2xl bg-card border border-border hover:border-gold/30 transition-all duration-200">
-        {/* Thumbnail placeholder */}
-        <div className="h-28 rounded-xl bg-gradient-to-br from-gold/5 to-transparent border border-border/30 mb-4 flex items-center justify-center overflow-hidden">
-          <span className="text-3xl opacity-20">
-            {["&#9733;", "&#9789;", "&#9737;", "&#9670;", "&#9679;"][index % 5]}
-          </span>
+        {/* Thumbnail with category icon */}
+        <div className="h-28 rounded-xl bg-gradient-to-br from-gold/[0.07] via-card to-card border border-border/30 mb-4 flex items-center justify-center overflow-hidden relative">
+          <Image
+            src={categoryIcon}
+            alt=""
+            width={48}
+            height={48}
+            className="opacity-15 group-hover:opacity-25 transition-opacity"
+          />
+          <div className="absolute bottom-2 right-3 text-[10px] text-muted/40 font-mono">
+            {String(index + 1).padStart(2, "0")}
+          </div>
         </div>
 
         {/* Meta */}

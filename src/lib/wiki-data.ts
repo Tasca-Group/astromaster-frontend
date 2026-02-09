@@ -10,6 +10,7 @@ export interface WikiArticle {
 export interface WikiCategory {
   id: string;
   title: string;
+  description: string;
   icon: string;
   articles: WikiArticle[];
 }
@@ -18,6 +19,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   {
     id: "astrologie",
     title: "Astrologie",
+    description: "Siderische & tropische Astrologie, Sternzeichen, Planeten, H\u00e4user und Aspekte \u2014 astronomisch korrekt erkl\u00e4rt.",
     icon: "/images/icons/siderisch.svg",
     articles: [
       {
@@ -89,6 +91,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   {
     id: "numerologie",
     title: "Numerologie",
+    description: "Die Kraft der Zahlen \u2014 Lebenszahlen, Meisterzahlen und was dein Geburtsdatum \u00fcber deinen Weg verr\u00e4t.",
     icon: "/images/icons/numerologie.svg",
     articles: [
       {
@@ -120,6 +123,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   {
     id: "aegyptisch",
     title: "Ägyptische Mystik",
+    description: "4.000 Jahre alte Weisheit — die 36 Dekane, ägyptische Gottheiten und das Dekansystem.",
     icon: "/images/icons/dekane.svg",
     articles: [
       {
@@ -151,6 +155,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   {
     id: "human-design",
     title: "Human Design",
+    description: "Dein energetischer Bauplan — die 5 Typen, 9 Zentren, Strategie und Autorität.",
     icon: "/images/icons/human-design.svg",
     articles: [
       {
@@ -190,6 +195,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   {
     id: "elemente",
     title: "Elementenlehre",
+    description: "Feuer, Erde, Luft und Wasser — die Balance der Elemente in deinem Chart.",
     icon: "/images/icons/tropisch.svg",
     articles: [
       {
@@ -221,6 +227,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
   {
     id: "chakren",
     title: "Chakren",
+    description: "Die 7 Hauptchakren — Bedeutung, Blockaden, Heilung und Verbindung zu deinem Energiekörper.",
     icon: "/images/icons/human-design.svg",
     articles: [
       {

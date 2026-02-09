@@ -11,7 +11,7 @@ export default function CategoryOverview({ category }: { category: WikiCategory 
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-xs text-muted mb-8">
-          <Link href="/archiv-test" className="hover:text-gold transition-colors">
+          <Link href="/archiv" className="hover:text-gold transition-colors">
             Sternarchiv
           </Link>
           <span className="text-border">/</span>
@@ -40,9 +40,11 @@ export default function CategoryOverview({ category }: { category: WikiCategory 
               </h1>
             </div>
           </div>
-          <p className="text-muted leading-relaxed max-w-2xl">
-            {category.articles.length} Artikel in dieser Kategorie.
-            Klicke auf einen Artikel, um mehr zu erfahren.
+          <p className="text-muted leading-relaxed max-w-2xl mb-2">
+            {category.description}
+          </p>
+          <p className="text-sm text-muted/60">
+            {category.articles.length} Artikel
           </p>
         </motion.div>
 
@@ -59,16 +61,25 @@ export default function CategoryOverview({ category }: { category: WikiCategory 
               >
                 <Link href={article.href} className="group block h-full">
                   <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-gold/30 transition-all">
-                    {/* Meta */}
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-[10px] text-muted uppercase tracking-wider">
-                        {readingTime} Min.
-                      </span>
-                      {!article.hasContent && (
-                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-border/50 text-muted">
-                          Bald
+                    {/* Header row with icon and meta */}
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-muted uppercase tracking-wider">
+                          {readingTime} Min.
                         </span>
-                      )}
+                        {!article.hasContent && (
+                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-border/50 text-muted">
+                            Bald
+                          </span>
+                        )}
+                      </div>
+                      <Image
+                        src={category.icon}
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="opacity-20"
+                      />
                     </div>
 
                     {/* Title */}
@@ -81,16 +92,19 @@ export default function CategoryOverview({ category }: { category: WikiCategory 
                       {article.description}
                     </p>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {article.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[9px] px-2 py-0.5 rounded-full bg-gold/5 text-muted border border-border/50"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    {/* Tags + Arrow */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-wrap gap-1.5">
+                        {article.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[9px] px-2 py-0.5 rounded-full bg-gold/5 text-muted border border-border/50"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="text-xs text-muted group-hover:text-gold transition-colors">&rarr;</span>
                     </div>
                   </div>
                 </Link>
@@ -102,7 +116,7 @@ export default function CategoryOverview({ category }: { category: WikiCategory 
         {/* Back + CTA */}
         <div className="mt-12 flex flex-col items-center gap-6">
           <Link
-            href="/archiv-test"
+            href="/archiv"
             className="text-sm text-muted hover:text-gold transition-colors"
           >
             &larr; Zur&uuml;ck zum Sternarchiv

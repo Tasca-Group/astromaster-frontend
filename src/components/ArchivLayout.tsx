@@ -180,7 +180,7 @@ export default function ArchivLayout({
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs text-muted mb-8">
-            <Link href="/archiv-test" className="hover:text-gold transition-colors">
+            <Link href="/archiv" className="hover:text-gold transition-colors">
               Sternarchiv
             </Link>
             <span className="text-border">/</span>
@@ -272,7 +272,7 @@ export default function ArchivLayout({
               <div className="mt-12 pt-6 border-t border-border/30 flex items-center justify-between">
                 <ShareButtons title={title} />
                 <Link
-                  href="/archiv-test"
+                  href="/archiv"
                   className="text-xs text-muted hover:text-gold transition-colors"
                 >
                   &larr; Zur&uuml;ck zum Sternarchiv
