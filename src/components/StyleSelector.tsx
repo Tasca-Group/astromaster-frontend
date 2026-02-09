@@ -8,7 +8,7 @@ interface Props {
 export default function StyleSelector({ selected, onSelect }: Props) {
   return (
     <div className="text-center">
-      <h2 className="text-2xl font-bold mb-2">Wähle dein Design</h2>
+      <h2 className="text-2xl font-light uppercase tracking-[0.15em] mb-2">Wähle dein Design</h2>
       <p className="text-muted mb-8">
         Dein kosmisches Profil — so individuell wie du.
       </p>
