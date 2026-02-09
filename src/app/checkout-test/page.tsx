@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { PRICES } from "@/lib/constants";
+import { calculatePricing } from "@/components/OrderFlow";
 
 interface FamilyMember {
   id: string;
@@ -21,12 +22,6 @@ interface OrderData {
   paket: "normal" | "pro";
   familyMembers: FamilyMember[];
   prefillGeburtsdatum?: string;
-}
-
-function getDiscount(totalPersons: number): number {
-  if (totalPersons >= 3) return 0.15;
-  if (totalPersons === 2) return 0.10;
-  return 0;
 }
 
 export default function CheckoutTestPage() {
@@ -87,12 +82,8 @@ export default function CheckoutTestPage() {
     );
   }
 
-  const totalPersons = 1 + orderData.familyMembers.length;
   const basePrice = PRICES[orderData.paket];
-  const discount = getDiscount(totalPersons);
-  const originalTotal = basePrice * totalPersons;
-  const discountedTotal = Math.round(originalTotal * (1 - discount));
-  const savings = originalTotal - discountedTotal;
+  const pricing = calculatePricing(basePrice, orderData.familyMembers);
   const designName = orderData.design === "light" ? "Solar Flare" : "Deep Space";
 
   function update(field: string, value: string | boolean) {
@@ -119,7 +110,6 @@ export default function CheckoutTestPage() {
     setLoading(true);
 
     try {
-      // Stripe integration kommt später — Platzhalter
       alert(
         "Stripe Checkout kommt bald!\n\n" +
           JSON.stringify(
@@ -134,7 +124,7 @@ export default function CheckoutTestPage() {
                 geburtsort: form.geburtsort,
               },
               familyMembers: orderData.familyMembers.length,
-              total: discountedTotal,
+              total: pricing.totalDiscounted,
             },
             null,
             2
@@ -159,29 +149,13 @@ export default function CheckoutTestPage() {
           transition={{ duration: 0.5 }}
         >
           {/* Summary */}
-          <div className="p-5 rounded-2xl bg-card border border-border mb-8">
-            <div className="flex justify-between items-start mb-3">
-              <div>
-                <p className="font-semibold">
-                  {orderData.paket === "pro" ? "Pro" : "Standard"}-Analyse
-                </p>
-                <p className="text-sm text-muted">
-                  {totalPersons} {totalPersons === 1 ? "Person" : "Personen"}
-                </p>
-              </div>
-              <div className="text-right">
-                {discount > 0 && (
-                  <p className="text-sm text-muted line-through">{originalTotal}&euro;</p>
-                )}
-                <p className="text-2xl font-bold text-gold">{discountedTotal}&euro;</p>
-                {savings > 0 && (
-                  <p className="text-xs text-gold">Du sparst {savings}&euro;</p>
-                )}
-              </div>
-            </div>
+          <div className="p-5 rounded-2xl bg-card border border-[rgba(201,169,97,0.2)] mb-8">
+            <p className="text-xs text-gold uppercase tracking-wider mb-4">
+              Deine Bestellung
+            </p>
 
-            <div className="pt-3 border-t border-border/50 space-y-2">
-              <div className="flex justify-between text-sm">
+            <div className="space-y-1.5 text-sm mb-4">
+              <div className="flex justify-between">
                 <span className="text-muted">Design</span>
                 <div className="flex items-center gap-2">
                   <span>{designName}</span>
@@ -193,15 +167,52 @@ export default function CheckoutTestPage() {
                   </button>
                 </div>
               </div>
-              {orderData.familyMembers.length > 0 && (
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted">Familienmitglieder</span>
-                  <span>
-                    {orderData.familyMembers
-                      .map((m) => m.vorname || "\u2014")
-                      .join(", ")}
+              <div className="flex justify-between">
+                <span className="text-muted">Paket</span>
+                <span>{orderData.paket === "pro" ? "Pro-Analyse" : "Standard-Analyse"}</span>
+              </div>
+            </div>
+
+            {/* Person list */}
+            <div className="border-t border-border/50 pt-3 space-y-2">
+              {pricing.persons.map((person, i) => (
+                <div key={i} className="flex items-center justify-between text-sm">
+                  <span className="truncate mr-3">
+                    <span className="text-muted">{i + 1}.</span>{" "}
+                    {i === 0 ? (form.vorname ? `${form.vorname} ${form.nachname}` : "Hauptperson") : person.name}
+                  </span>
+                  <span className="flex items-center gap-2 shrink-0">
+                    <span className="font-medium">
+                      {person.price.toFixed(2).replace(".", ",")}&euro;
+                    </span>
+                    {person.discount > 0 && (
+                      <span className="text-[#4CAF50] text-xs">-{person.discount}%</span>
+                    )}
                   </span>
                 </div>
+              ))}
+            </div>
+
+            {/* Totals */}
+            <div className="border-t border-border/50 mt-3 pt-3">
+              {pricing.totalSavings > 0 && (
+                <div className="flex justify-between text-sm text-muted mb-1">
+                  <span>Statt:</span>
+                  <span className="line-through">
+                    {pricing.totalOriginal.toFixed(2).replace(".", ",")}&euro;
+                  </span>
+                </div>
+              )}
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium uppercase tracking-wider">Gesamt</span>
+                <span className="text-2xl font-bold text-gold">
+                  {pricing.totalDiscounted.toFixed(2).replace(".", ",")}&euro;
+                </span>
+              </div>
+              {pricing.totalSavings > 0 && (
+                <p className="text-sm text-[#4CAF50] text-center mt-2 font-medium">
+                  Du sparst {pricing.totalSavings.toFixed(2).replace(".", ",")}&euro;
+                </p>
               )}
             </div>
           </div>
@@ -402,7 +413,7 @@ export default function CheckoutTestPage() {
                   Weiterleitung...
                 </span>
               ) : (
-                <>Jetzt kostenpflichtig bestellen &mdash; {discountedTotal}&euro;</>
+                <>Jetzt kostenpflichtig bestellen &mdash; {pricing.totalDiscounted.toFixed(2).replace(".", ",")}&euro;</>
               )}
             </button>
           </form>

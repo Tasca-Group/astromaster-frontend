@@ -6,13 +6,52 @@ import StyleSelector from "./StyleSelector";
 import PackageSelector from "./PackageSelector";
 import FamilyMembers, { type FamilyMember } from "./FamilyMembers";
 import FeatureComparison from "./FeatureComparison";
+import PricePanel, { type PersonPricing } from "./PricePanel";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { PRICES } from "@/lib/constants";
 
-function getDiscount(totalPersons: number): number {
-  if (totalPersons >= 3) return 0.15;
-  if (totalPersons === 2) return 0.10;
-  return 0;
+const PERSON_DISCOUNTS = [0, 0.10, 0.15, 0.20, 0.25];
+
+export function getPersonDiscount(personIndex: number): number {
+  return PERSON_DISCOUNTS[Math.min(personIndex, PERSON_DISCOUNTS.length - 1)];
+}
+
+export function calculatePricing(
+  basePrice: number,
+  familyMembers: FamilyMember[]
+): {
+  persons: PersonPricing[];
+  totalOriginal: number;
+  totalDiscounted: number;
+  totalSavings: number;
+} {
+  const persons: PersonPricing[] = [];
+  let totalOriginal = 0;
+  let totalDiscounted = 0;
+
+  // Person 1: Hauptperson
+  const p1Price = basePrice;
+  persons.push({ name: "Hauptperson", price: p1Price, discount: 0 });
+  totalOriginal += basePrice;
+  totalDiscounted += p1Price;
+
+  // Person 2+: Family members
+  familyMembers.forEach((member, i) => {
+    const discount = getPersonDiscount(i + 1);
+    const price = Math.round(basePrice * (1 - discount) * 100) / 100;
+    persons.push({
+      name: member.vorname || `Person ${i + 2}`,
+      price,
+      discount: Math.round(discount * 100),
+    });
+    totalOriginal += basePrice;
+    totalDiscounted += price;
+  });
+
+  totalDiscounted = Math.round(totalDiscounted * 100) / 100;
+  const totalSavings = Math.round((totalOriginal - totalDiscounted) * 100) / 100;
+
+  return { persons, totalOriginal, totalDiscounted, totalSavings };
 }
 
 interface Props {
@@ -25,12 +64,8 @@ export default function OrderFlow({ prefillGeburtsdatum }: Props) {
   const [paket, setPaket] = useState<"normal" | "pro">("pro");
   const [familyMembers, setFamilyMembers] = useState<FamilyMember[]>([]);
 
-  const totalPersons = 1 + familyMembers.length;
   const basePrice = PRICES[paket];
-  const discount = getDiscount(totalPersons);
-  const originalTotal = basePrice * totalPersons;
-  const discountedTotal = Math.round(originalTotal * (1 - discount));
-  const savings = originalTotal - discountedTotal;
+  const pricing = calculatePricing(basePrice, familyMembers);
 
   function handleCheckout() {
     const orderData = {
@@ -44,68 +79,43 @@ export default function OrderFlow({ prefillGeburtsdatum }: Props) {
   }
 
   return (
-    <div className="space-y-16">
-      {/* 1. Design Selection */}
-      <AnimateOnScroll>
-        <StyleSelector selected={design} onSelect={setDesign} />
-      </AnimateOnScroll>
+    <div>
+      <div className="lg:grid lg:grid-cols-[1fr_380px] lg:gap-8 lg:items-start">
+        {/* Left: Configurator */}
+        <div className="space-y-16 pb-32 lg:pb-0">
+          <AnimateOnScroll>
+            <StyleSelector selected={design} onSelect={setDesign} />
+          </AnimateOnScroll>
 
-      {/* 2. Package Selection */}
-      <AnimateOnScroll>
-        <PackageSelector selected={paket} onSelect={setPaket} />
-      </AnimateOnScroll>
+          <AnimateOnScroll>
+            <PackageSelector selected={paket} onSelect={setPaket} />
+          </AnimateOnScroll>
 
-      {/* 3. Family Feature */}
-      <AnimateOnScroll>
-        <FamilyMembers
-          members={familyMembers}
-          onChange={setFamilyMembers}
-          maxTotal={5}
-        />
-      </AnimateOnScroll>
+          <AnimateOnScroll>
+            <FamilyMembers
+              members={familyMembers}
+              onChange={setFamilyMembers}
+              maxTotal={5}
+              basePrice={basePrice}
+            />
+          </AnimateOnScroll>
 
-      {/* 4. Feature Comparison */}
-      <AnimateOnScroll>
-        <FeatureComparison />
-      </AnimateOnScroll>
-
-      {/* 5. Pricing Summary + CTA */}
-      <AnimateOnScroll>
-        <div className="max-w-md mx-auto">
-          <div className="p-6 rounded-2xl bg-card border border-border mb-6 text-center">
-            <p className="text-sm text-muted mb-2">
-              {totalPersons}&times; {paket === "pro" ? "Pro" : "Standard"}-Analyse
-              {discount > 0 && (
-                <span className="ml-2 text-gold">
-                  {Math.round(discount * 100)}% Familienrabatt
-                </span>
-              )}
-            </p>
-            <div className="flex items-center justify-center gap-3">
-              {discount > 0 && (
-                <span className="text-2xl text-muted line-through">
-                  {originalTotal}&euro;
-                </span>
-              )}
-              <span className="text-3xl font-bold text-gold">
-                {discountedTotal}&euro;
-              </span>
-            </div>
-            {savings > 0 && (
-              <p className="text-sm text-gold mt-2">
-                Du sparst {savings}&euro;
-              </p>
-            )}
-          </div>
-
-          <button
-            onClick={handleCheckout}
-            className="w-full py-4 bg-gold hover:bg-gold-hover text-bg font-semibold text-lg rounded-xl transition-colors"
-          >
-            Jetzt kaufen
-          </button>
+          <AnimateOnScroll>
+            <FeatureComparison />
+          </AnimateOnScroll>
         </div>
-      </AnimateOnScroll>
+
+        {/* Right: Sticky Price Panel (desktop + mobile bottom bar) */}
+        <PricePanel
+          paket={paket}
+          design={design}
+          persons={pricing.persons}
+          totalOriginal={pricing.totalOriginal}
+          totalDiscounted={pricing.totalDiscounted}
+          totalSavings={pricing.totalSavings}
+          onCheckout={handleCheckout}
+        />
+      </div>
     </div>
   );
 }
