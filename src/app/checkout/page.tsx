@@ -9,6 +9,8 @@ import { createCheckoutSession } from "@/lib/api";
 function CheckoutContent() {
   const searchParams = useSearchParams();
   const version = (searchParams.get("version") as "normal" | "pro") || "normal";
+  const design = (searchParams.get("design") as "dark" | "light") || "dark";
+  const designName = design === "light" ? "Solar Flare" : "Deep Space";
   const price = PRICES[version] || PRICES.normal;
 
   const [form, setForm] = useState({
@@ -60,6 +62,7 @@ function CheckoutContent() {
         geburtszeit,
         geburtsort: form.geburtsort,
         version,
+        design,
       });
 
       // Redirect zu Stripe Checkout
@@ -90,6 +93,9 @@ function CheckoutContent() {
               <p className="text-sm text-muted">
                 {version === "pro" ? "50-60" : "12-15"} Seiten PDF
               </p>
+              <p className="text-xs text-muted mt-1">
+                Design: {designName}
+              </p>
             </div>
             <p className="text-2xl font-bold text-gold">{price}&euro;</p>
           </div>
@@ -98,7 +104,7 @@ function CheckoutContent() {
             <div className="p-4 rounded-xl bg-gold/5 border border-gold/20 mb-8 text-center">
               <p className="text-sm text-muted">
                 Upgrade auf{" "}
-                <a href="/checkout?version=pro" className="text-gold font-medium">
+                <a href={`/checkout?version=pro&design=${design}`} className="text-gold font-medium">
                   Pro für {PRICES.pro}&euro;
                 </a>{" "}
                 &mdash; 4x mehr Inhalt

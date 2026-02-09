@@ -44,6 +44,7 @@ export async function createCheckoutSession(data: {
   geburtszeit: string;
   geburtsort: string;
   version: "normal" | "pro";
+  design?: "dark" | "light";
 }): Promise<CheckoutSessionResponse> {
   const res = await fetch(`${API_URL}/api/create-checkout-session`, {
     method: "POST",
