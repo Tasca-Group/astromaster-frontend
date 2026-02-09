@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import GratisCheckFormExtended, { type CheckFormData } from "@/components/GratisCheckFormExtended";
@@ -229,16 +229,17 @@ export default function CheckPage() {
     setError("");
   }
 
-  // Count deviations for summary
-  const zeichen: { label: string; data: ZeichenVergleich | null }[] = result
-    ? [
+  // Count deviations for summary — filter out null AND undefined
+  const zeichen: { label: string; data: ZeichenVergleich }[] = result
+    ? ([
         { label: "Sonne", data: result.sonne },
         { label: "Mond", data: result.mond },
         { label: "Aszendent", data: result.aszendent },
-      ].filter((z) => z.data !== null)
+      ] as { label: string; data: ZeichenVergleich | null | undefined }[])
+        .filter((z): z is { label: string; data: ZeichenVergleich } => z.data != null)
     : [];
   const totalZeichen = zeichen.length;
-  const abweichungen = zeichen.filter((z) => z.data?.abweichung).length;
+  const abweichungen = zeichen.filter((z) => z.data.abweichung).length;
 
   return (
     <section className="min-h-screen pt-24 pb-16 px-6">
@@ -331,31 +332,42 @@ export default function CheckPage() {
                 delay={0}
               />
 
-              {/* Mond — only if returned by API */}
+              {/* Mond — always returned */}
               {result.mond && (
                 <ZeichenCard
                   icon="&#9789;"
                   label="Dein Mond"
                   data={result.mond}
-                  wikiLink="/wiki/siderische-astrologie"
-                  wikiText="Was sagt der Mond über dich?"
+                  wikiLink="/wiki/aszendent-mond-sonne"
+                  wikiText="Was sagt der Mond \u00fcber dich?"
                   delay={0.5}
                 />
               )}
 
               {/* Aszendent — only with time */}
-              <AnimatePresence>
-                {result.aszendent && (
-                  <ZeichenCard
-                    icon="&uarr;"
-                    label="Dein Aszendent"
-                    data={result.aszendent}
-                    wikiLink="/wiki/siderische-astrologie"
-                    wikiText="Was bedeutet der Aszendent?"
-                    delay={1.0}
-                  />
-                )}
-              </AnimatePresence>
+              {result.aszendent ? (
+                <ZeichenCard
+                  icon="&uarr;"
+                  label="Dein Aszendent"
+                  data={result.aszendent}
+                  wikiLink="/wiki/aszendent-mond-sonne"
+                  wikiText="Was bedeutet der Aszendent?"
+                  delay={1.0}
+                />
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 1.0 }}
+                  className="p-5 rounded-2xl bg-card/50 border border-border/50 border-dashed text-center"
+                >
+                  <p className="text-sm text-muted">
+                    <span className="text-gold">&uarr;</span>{" "}
+                    Gib deine <span className="text-white font-medium">Geburtszeit</span> ein,
+                    um auch deinen Aszendenten zu sehen.
+                  </p>
+                </motion.div>
+              )}
 
               {/* Ophiuchus */}
               {result.ophiuchus && (
