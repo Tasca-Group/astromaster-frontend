@@ -267,17 +267,13 @@ function ArticleCard({ article, index, categoryIcon }: { article: WikiArticle; i
 /* ─── Stats Strip ─── */
 function StatsStrip() {
   const totalArticles = WIKI_CATEGORIES.reduce((sum, c) => sum + c.articles.length, 0);
-  const totalWithContent = WIKI_CATEGORIES.reduce(
-    (sum, c) => sum + c.articles.filter((a) => a.hasContent).length,
-    0
-  );
 
   return (
     <div className="flex justify-center gap-10 sm:gap-16">
       {[
         { value: totalArticles, label: "Artikel" },
         { value: WIKI_CATEGORIES.length, label: "Kategorien" },
-        { value: totalWithContent, label: "Fertig" },
+        { value: "5", label: "Systeme" },
       ].map((s) => (
         <div key={s.label} className="text-center">
           <p className="text-xl sm:text-2xl font-bold text-gold">{s.value}</p>
