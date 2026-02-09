@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import type { GratisCheckResponse } from "@/lib/api";
 import { PRICES } from "@/lib/constants";
 
