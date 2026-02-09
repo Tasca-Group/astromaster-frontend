@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Head circle -->
+  <circle cx="60" cy="20" r="10" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Neck -->
+  <line x1="60" y1="30" x2="60" y2="38" stroke="#C9A961" stroke-width="2"/>
+  <!-- Shoulders -->
+  <line x1="36" y1="44" x2="84" y2="44" stroke="#C9A961" stroke-width="2"/>
+  <!-- Left arm -->
+  <polyline points="36,44 30,58 26,74" fill="none" stroke="#C9A961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right arm -->
+  <polyline points="84,44 90,58 94,74" fill="none" stroke="#C9A961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Torso - left side -->
+  <line x1="42" y1="44" x2="44" y2="80" stroke="#C9A961" stroke-width="2"/>
+  <!-- Torso - right side -->
+  <line x1="78" y1="44" x2="76" y2="80" stroke="#C9A961" stroke-width="2"/>
+  <!-- Hips -->
+  <line x1="44" y1="80" x2="76" y2="80" stroke="#C9A961" stroke-width="2"/>
+  <!-- Left leg -->
+  <polyline points="50,80 46,96 42,112" fill="none" stroke="#C9A961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right leg -->
+  <polyline points="70,80 74,96 78,112" fill="none" stroke="#C9A961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- G-Center diamond in chest -->
+  <polygon points="60,50 70,62 60,74 50,62" fill="none" stroke="#C9A961" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Small energy lines radiating from diamond -->
+  <line x1="50" y1="62" x2="44" y2="62" stroke="#C9A961" stroke-width="1.5" opacity="0.5"/>
+  <line x1="70" y1="62" x2="76" y2="62" stroke="#C9A961" stroke-width="1.5" opacity="0.5"/>
+  <line x1="60" y1="50" x2="60" y2="44" stroke="#C9A961" stroke-width="1.5" opacity="0.5"/>
+  <line x1="60" y1="74" x2="60" y2="78" stroke="#C9A961" stroke-width="1.5" opacity="0.5"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4B87A"/>
+      <stop offset="50%" stop-color="#C9A961"/>
+      <stop offset="100%" stop-color="#B8944D"/>
+    </linearGradient>
+  </defs>
+  <!-- Compass/Star Symbol -->
+  <g transform="translate(60,60)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#C9A961" stroke-width="0.8" opacity="0.5"/>
+    <!-- 8-pointed star -->
+    <polygon points="0,-32 4,-10 32,0 10,4 0,32 -4,10 -32,0 -10,-4" fill="none" stroke="url(#goldGrad)" stroke-width="1.8"/>
+    <!-- Cardinal points -->
+    <line x1="0" y1="-38" x2="0" y2="-44" stroke="#C9A961" stroke-width="2" stroke-linecap="round"/>
+    <line x1="38" y1="0" x2="44" y2="0" stroke="#C9A961" stroke-width="2" stroke-linecap="round"/>
+    <line x1="0" y1="38" x2="0" y2="44" stroke="#C9A961" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-38" y1="0" x2="-44" y2="0" stroke="#C9A961" stroke-width="2" stroke-linecap="round"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="3" fill="#C9A961"/>
+    <!-- Diagonal ticks -->
+    <line x1="27" y1="-27" x2="30" y2="-30" stroke="#C9A961" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="27" y1="27" x2="30" y2="30" stroke="#C9A961" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="-27" y1="27" x2="-30" y2="30" stroke="#C9A961" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="-27" y1="-27" x2="-30" y2="-30" stroke="#C9A961" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+  <!-- Text -->
+  <text x="120" y="52" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="36" fill="url(#goldGrad)" letter-spacing="3">ASTRO</text>
+  <text x="120" y="88" font-family="Helvetica, Arial, sans-serif" font-weight="300" font-size="36" fill="#C9A961" letter-spacing="6">MASTER</text>
+  <!-- Subtle line under text -->
+  <line x1="120" y1="96" x2="340" y2="96" stroke="#C9A961" stroke-width="0.5" opacity="0.4"/>
+</svg>

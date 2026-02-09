@@ -2,8 +2,38 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import type { GratisCheckResponse } from "@/lib/api";
 import { PRICES } from "@/lib/constants";
+
+const ZEICHEN_SVG: Record<string, string> = {
+  "Widder": "widder",
+  "Stier": "stier",
+  "Zwillinge": "zwillinge",
+  "Krebs": "krebs",
+  "Löwe": "loewe",
+  "Jungfrau": "jungfrau",
+  "Waage": "waage",
+  "Skorpion": "skorpion",
+  "Schütze": "schuetze",
+  "Steinbock": "steinbock",
+  "Wassermann": "wassermann",
+  "Fische": "fische",
+};
+
+function ZodiacIcon({ zeichen, className = "" }: { zeichen: string; className?: string }) {
+  const file = ZEICHEN_SVG[zeichen];
+  if (!file) return null;
+  return (
+    <Image
+      src={`/images/sternzeichen/${file}.svg`}
+      alt={zeichen}
+      width={48}
+      height={48}
+      className={className}
+    />
+  );
+}
 
 interface Props {
   result: GratisCheckResponse;
@@ -26,8 +56,9 @@ export default function CheckResult({ result, geburtsdatum }: Props) {
 
         <div className="flex items-center justify-center gap-4 sm:gap-8">
           {/* Tropisch */}
-          <div className="flex-1 text-center">
+          <div className="flex-1 text-center flex flex-col items-center">
             <p className="text-xs text-muted uppercase tracking-wider mb-2">Tropisch</p>
+            <ZodiacIcon zeichen={result.tropisch} className="opacity-40 mb-2" />
             <p className="text-xl sm:text-2xl font-bold text-muted/60">{result.tropisch}</p>
             <p className="text-xs text-muted mt-1">Westlich</p>
           </div>
@@ -46,8 +77,9 @@ export default function CheckResult({ result, geburtsdatum }: Props) {
           </div>
 
           {/* Siderisch */}
-          <div className="flex-1 text-center">
+          <div className="flex-1 text-center flex flex-col items-center">
             <p className="text-xs text-gold uppercase tracking-wider mb-2">Siderisch</p>
+            <ZodiacIcon zeichen={result.siderisch} className="mb-2" />
             <p className="text-xl sm:text-2xl font-bold text-gold">{result.siderisch}</p>
             <p className="text-xs text-muted mt-1">Astronomisch</p>
           </div>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500" fill="none">
+  <!-- Human Design Bodygraph — AstroMaster -->
+  <!-- Minimalist gold strokes on transparent background -->
+
+  <defs>
+    <style>
+      .center { stroke: #C9A961; fill: none; stroke-width: 1.5; }
+      .channel { stroke: #C9A961; stroke-width: 1; opacity: 0.5; }
+      .label { font-family: Helvetica, Arial, sans-serif; font-size: 8px; fill: #C9A961; opacity: 0.6; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- ======================== -->
+  <!-- CHANNELS (drawn first so centers sit on top) -->
+  <!-- ======================== -->
+
+  <!-- Head (150,40) → Ajna (150,110) -->
+  <line x1="150" y1="58" x2="150" y2="92" class="channel"/>
+
+  <!-- Ajna (150,110) → Throat (150,180) -->
+  <line x1="150" y1="128" x2="150" y2="160" class="channel"/>
+
+  <!-- Throat (150,180) → G-Zentrum (150,250) -->
+  <line x1="150" y1="200" x2="150" y2="228" class="channel"/>
+
+  <!-- G-Zentrum (150,250) → Sakral (150,350) -->
+  <line x1="150" y1="272" x2="150" y2="330" class="channel"/>
+
+  <!-- Sakral (150,350) → Wurzel (150,440) -->
+  <line x1="150" y1="370" x2="150" y2="420" class="channel"/>
+
+  <!-- Throat (150,180) → Herz (95,280) — diagonal left -->
+  <line x1="133" y1="195" x2="108" y2="270" class="channel"/>
+
+  <!-- Herz (95,280) → G-Zentrum (150,250) — short diagonal -->
+  <line x1="112" y1="278" x2="130" y2="255" class="channel"/>
+
+  <!-- G-Zentrum (150,250) → Milz (70,350) — diagonal left -->
+  <line x1="132" y1="268" x2="85" y2="335" class="channel"/>
+
+  <!-- Milz (70,350) → Sakral (150,350) — horizontal to center -->
+  <line x1="88" y1="350" x2="130" y2="350" class="channel"/>
+
+  <!-- Sakral (150,350) → Emotionen (230,350) — horizontal right -->
+  <line x1="170" y1="350" x2="213" y2="350" class="channel"/>
+
+  <!-- Throat (150,180) → Emotionen (230,350) — diagonal right long -->
+  <line x1="167" y1="195" x2="218" y2="335" class="channel"/>
+
+  <!-- Milz (70,350) → Wurzel (150,440) — diagonal -->
+  <line x1="78" y1="368" x2="133" y2="425" class="channel"/>
+
+  <!-- Emotionen (230,350) → Wurzel (150,440) — diagonal -->
+  <line x1="222" y1="368" x2="167" y2="425" class="channel"/>
+
+
+  <!-- ======================== -->
+  <!-- 9 CENTERS -->
+  <!-- ======================== -->
+
+  <!-- 1. Kopf/Head — Triangle pointing UP at (150, 40) -->
+  <polygon points="150,20 170,58 130,58" class="center"/>
+  <!-- Label -->
+  <text x="150" y="70" class="label">Kopf</text>
+
+  <!-- 2. Ajna — Triangle pointing DOWN at (150, 110) -->
+  <polygon points="130,92 170,92 150,128" class="center"/>
+  <!-- Label -->
+  <text x="150" y="140" class="label">Ajna</text>
+
+  <!-- 3. Kehle/Throat — Square at (150, 180) -->
+  <rect x="130" y="160" width="40" height="40" class="center"/>
+  <!-- Label -->
+  <text x="150" y="212" class="label">Kehle</text>
+
+  <!-- 4. G-Zentrum/Self — Diamond (rotated square) at (150, 250) -->
+  <polygon points="150,228 172,250 150,272 128,250" class="center"/>
+  <!-- Label -->
+  <text x="150" y="286" class="label">G-Zentrum</text>
+
+  <!-- 5. Herz/Ego/Heart — Small triangle pointing RIGHT at (95, 280) -->
+  <polygon points="80,266 112,280 80,294" class="center"/>
+  <!-- Label -->
+  <text x="95" y="308" class="label">Herz</text>
+
+  <!-- 6. Milz/Spleen — Triangle pointing LEFT at (70, 350) -->
+  <polygon points="88,335 88,365 58,350" class="center"/>
+  <!-- Label -->
+  <text x="70" y="380" class="label">Milz</text>
+
+  <!-- 7. Sakral/Sacral — Square at (150, 350) -->
+  <rect x="130" y="330" width="40" height="40" class="center"/>
+  <!-- Label -->
+  <text x="150" y="382" class="label">Sakral</text>
+
+  <!-- 8. Emotionen/Solar Plexus — Triangle pointing RIGHT at (230, 350) -->
+  <polygon points="213,335 243,350 213,365" class="center"/>
+  <!-- Label -->
+  <text x="230" y="380" class="label">Emotionen</text>
+
+  <!-- 9. Wurzel/Root — Square at (150, 440) -->
+  <rect x="130" y="420" width="40" height="40" class="center"/>
+  <!-- Label -->
+  <text x="150" y="472" class="label">Wurzel</text>
+
+</svg>

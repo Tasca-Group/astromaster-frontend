@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,8 +7,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
-            <p className="font-semibold text-lg">AstroMaster</p>
-            <p className="text-muted text-sm mt-1">Dein wahres kosmisches Profil</p>
+            <Image
+              src="/images/logo/astromaster-logo.svg"
+              alt="AstroMaster"
+              width={140}
+              height={42}
+            />
+            <p className="text-muted text-sm mt-2">Dein wahres kosmisches Profil</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted">

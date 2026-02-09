@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <g stroke="#C9A961" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Trident: three prongs -->
+    <line x1="14" y1="18" x2="14" y2="8"/>
+    <line x1="30" y1="18" x2="30" y2="8"/>
+    <line x1="46" y1="18" x2="46" y2="8"/>
+    <!-- Curved base connecting prongs -->
+    <path d="M 14 18 Q 14 26 30 26 Q 46 26 46 18"/>
+    <!-- Vertical staff -->
+    <line x1="30" y1="26" x2="30" y2="52"/>
+    <!-- Cross near bottom -->
+    <line x1="22" y1="44" x2="38" y2="44"/>
+  </g>
+</svg>

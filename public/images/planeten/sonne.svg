@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <g stroke="#C9A961" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer circle -->
+    <circle cx="30" cy="30" r="18"/>
+    <!-- Center dot -->
+    <circle cx="30" cy="30" r="1.5" fill="#C9A961"/>
+  </g>
+</svg>

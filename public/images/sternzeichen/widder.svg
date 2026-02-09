@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <g fill="none" stroke="#C9A961" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left horn: curls from center-top outward and down -->
+    <path d="M40 65 L40 30 C40 18 30 12 22 14 C14 16 12 24 16 30 C18 34 24 34 26 30"/>
+    <!-- Right horn: curls from center-top outward and down -->
+    <path d="M40 30 C40 18 50 12 58 14 C66 16 68 24 64 30 C62 34 56 34 54 30"/>
+  </g>
+</svg>

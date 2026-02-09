@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Constellation stars (dots) connected by lines -->
+  <!-- Star 1 - top left -->
+  <circle cx="30" cy="28" r="4" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Star 2 - upper center -->
+  <circle cx="58" cy="38" r="4.5" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Star 3 - right -->
+  <circle cx="90" cy="50" r="3.5" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Star 4 - center -->
+  <circle cx="65" cy="65" r="5" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Star 5 - lower left -->
+  <circle cx="35" cy="78" r="3.5" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Star 6 - bottom right -->
+  <circle cx="80" cy="92" r="4" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Connecting lines -->
+  <line x1="30" y1="28" x2="58" y2="38" stroke="#C9A961" stroke-width="1.5"/>
+  <line x1="58" y1="38" x2="90" y2="50" stroke="#C9A961" stroke-width="1.5"/>
+  <line x1="58" y1="38" x2="65" y2="65" stroke="#C9A961" stroke-width="1.5"/>
+  <line x1="90" y1="50" x2="65" y2="65" stroke="#C9A961" stroke-width="1.5"/>
+  <line x1="65" y1="65" x2="35" y2="78" stroke="#C9A961" stroke-width="1.5"/>
+  <line x1="65" y1="65" x2="80" y2="92" stroke="#C9A961" stroke-width="1.5"/>
+  <!-- Small background stars (tiny dots) -->
+  <circle cx="15" cy="55" r="1.5" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="105" cy="25" r="1.5" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="48" cy="100" r="1.5" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="100" cy="75" r="1.5" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="18" cy="15" r="1" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="75" cy="15" r="1" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="15" cy="95" r="1" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="105" cy="105" r="1" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.3"/>
+</svg>

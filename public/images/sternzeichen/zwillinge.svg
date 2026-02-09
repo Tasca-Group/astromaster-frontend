@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <g fill="none" stroke="#C9A961" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top connecting bar -->
+    <path d="M18 16 C28 22 52 22 62 16"/>
+    <!-- Bottom connecting bar -->
+    <path d="M18 64 C28 58 52 58 62 64"/>
+    <!-- Left vertical pillar -->
+    <line x1="26" y1="19" x2="26" y2="61"/>
+    <!-- Right vertical pillar -->
+    <line x1="54" y1="19" x2="54" y2="61"/>
+  </g>
+</svg>

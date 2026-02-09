@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <g fill="none" stroke="#C9A961" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left arc (facing left) -->
+    <path d="M30 16 C16 24 16 56 30 64"/>
+    <!-- Right arc (facing right) -->
+    <path d="M50 16 C64 24 64 56 50 64"/>
+    <!-- Connecting horizontal line -->
+    <line x1="14" y1="40" x2="66" y2="40"/>
+  </g>
+</svg>

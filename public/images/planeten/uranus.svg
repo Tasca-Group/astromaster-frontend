@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <g stroke="#C9A961" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Circle with dot at bottom -->
+    <circle cx="30" cy="42" r="8"/>
+    <circle cx="30" cy="42" r="1.5" fill="#C9A961"/>
+    <!-- Vertical line up from circle -->
+    <line x1="30" y1="34" x2="30" y2="18"/>
+    <!-- Two vertical antenna lines -->
+    <line x1="20" y1="18" x2="20" y2="8"/>
+    <line x1="40" y1="18" x2="40" y2="8"/>
+    <!-- Horizontal bar connecting antennas -->
+    <line x1="20" y1="18" x2="40" y2="18"/>
+    <!-- Small dots at antenna tips -->
+    <circle cx="20" cy="8" r="1.5" fill="#C9A961"/>
+    <circle cx="40" cy="8" r="1.5" fill="#C9A961"/>
+  </g>
+</svg>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navigation() {
@@ -36,8 +37,14 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-semibold tracking-tight">
-          AstroMaster
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo/astromaster-logo.svg"
+            alt="AstroMaster"
+            width={160}
+            height={48}
+            priority
+          />
         </Link>
 
         {/* Desktop */}

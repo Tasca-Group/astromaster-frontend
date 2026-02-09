@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <g stroke="#C9A961" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Circle -->
+    <circle cx="24" cy="34" r="14"/>
+    <!-- Arrow line from circle to upper-right -->
+    <line x1="34" y1="24" x2="48" y2="10"/>
+    <!-- Arrow head -->
+    <polyline points="38,10 48,10 48,20"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Eye of Horus - simplified geometric -->
+  <!-- Almond-shaped eye outline -->
+  <path d="M16,60 Q60,28 104,60 Q60,92 16,60 Z" fill="none" stroke="#C9A961" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Iris circle -->
+  <circle cx="60" cy="60" r="14" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Pupil circle -->
+  <circle cx="60" cy="60" r="6" fill="none" stroke="#C9A961" stroke-width="2"/>
+  <!-- Egyptian downward stroke (the distinctive Horus teardrop) -->
+  <path d="M60,74 L56,88 Q54,94 50,98" fill="none" stroke="#C9A961" stroke-width="2" stroke-linecap="round"/>
+  <!-- Spiral at the end of the teardrop -->
+  <path d="M50,98 Q46,100 44,97 Q42,94 45,92" fill="none" stroke="#C9A961" stroke-width="2" stroke-linecap="round"/>
+  <!-- Eyebrow arch -->
+  <path d="M20,50 Q60,22 100,50" fill="none" stroke="#C9A961" stroke-width="1.5" opacity="0.5"/>
+  <!-- Inner corner decorative line -->
+  <path d="M16,60 L10,64 L8,72" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

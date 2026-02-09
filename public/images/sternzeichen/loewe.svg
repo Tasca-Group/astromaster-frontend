@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <g fill="none" stroke="#C9A961" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Small circle (head) -->
+    <circle cx="24" cy="54" r="8"/>
+    <!-- Mane/body: sweeping curve from circle up and around -->
+    <path d="M32 54 C38 54 44 48 44 40 C44 32 38 26 32 22 C26 18 20 18 16 22 C12 26 12 32 16 36"/>
+    <!-- Tail: continues from the curve, sweeping right -->
+    <path d="M44 40 C50 40 56 36 60 30 C64 24 66 18 64 14"/>
+  </g>
+</svg>

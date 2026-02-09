@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   description:
     "86% aller Menschen haben ein anderes Sternzeichen als sie glauben. Finde deins heraus — basierend auf echter Astronomie.",
   metadataBase: new URL("https://astro-masters.com"),
+  icons: {
+    icon: "/images/logo/favicon-32.svg",
+    apple: "/images/logo/favicon-192.svg",
+  },
   openGraph: {
     title: "AstroMaster — Dein wahres Sternzeichen",
     description:

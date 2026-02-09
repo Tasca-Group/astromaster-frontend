@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <g fill="none" stroke="#C9A961" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- M shape with three humps -->
+    <path d="M12 65 L12 32 C12 20 20 16 24 24 L24 65"/>
+    <path d="M24 32 C24 20 32 16 36 24 L36 65"/>
+    <path d="M36 32 C36 20 44 16 48 24 L48 65"/>
+    <!-- Crossed tail on the right -->
+    <path d="M48 44 C54 44 60 38 62 32 C64 26 60 22 56 26 C52 30 54 38 60 42 C64 45 68 52 66 60"/>
+    <!-- Cross stroke on tail -->
+    <path d="M56 48 L68 42"/>
+  </g>
+</svg>
