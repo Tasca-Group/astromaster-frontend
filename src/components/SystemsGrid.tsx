@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const systems = [
@@ -9,30 +10,35 @@ const systems = [
     icon: "/images/icons/siderisch.svg",
     description:
       "Das astronomisch korrekte System. Berechnet nach den tatsächlichen Sternpositionen mit Lahiri-Ayanamsa.",
+    wiki: "/wiki-test/siderische-astrologie",
   },
   {
     title: "Numerologie",
     icon: "/images/icons/numerologie.svg",
     description:
       "Deine Lebenszahl entschlüsselt deinen Lebensweg, verborgene Talente und karmische Lektionen.",
+    wiki: "/wiki-test/numerologie",
   },
   {
     title: "Ägyptische Dekane",
     icon: "/images/icons/dekane.svg",
     description:
       "37 Dekane offenbaren deinen kosmischen Wächter &mdash; eine 4.000 Jahre alte Tradition aus dem Alten Ägypten.",
+    wiki: "/wiki-test/aegyptische-dekane",
   },
   {
     title: "Human Design",
     icon: "/images/icons/human-design.svg",
     description:
       "Dein energetischer Bauplan: Typ, Strategie und Autorität für authentische Entscheidungen.",
+    wiki: "/wiki-test/human-design",
   },
   {
     title: "Elementar-Analyse",
     icon: "/images/icons/tropisch.svg",
     description:
       "Die Balance der fünf Elemente in deinem Chart zeigt deine natürlichen Stärken und blinden Flecken.",
+    wiki: "/wiki-test/elementar-analyse",
   },
 ];
 
@@ -66,9 +72,15 @@ export default function SystemsGrid() {
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{system.title}</h3>
                 <p
-                  className="text-muted leading-relaxed"
+                  className="text-muted leading-relaxed mb-4"
                   dangerouslySetInnerHTML={{ __html: system.description }}
                 />
+                <Link
+                  href={system.wiki}
+                  className="text-gold text-sm hover:underline"
+                >
+                  Mehr erfahren &rarr;
+                </Link>
               </div>
             </AnimateOnScroll>
           ))}
