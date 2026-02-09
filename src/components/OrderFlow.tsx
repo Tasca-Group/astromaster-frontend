@@ -75,7 +75,7 @@ export default function OrderFlow({ prefillGeburtsdatum }: Props) {
       prefillGeburtsdatum,
     };
     sessionStorage.setItem("astro-order", JSON.stringify(orderData));
-    router.push("/checkout-test");
+    router.push("/checkout");
   }
 
   return (
