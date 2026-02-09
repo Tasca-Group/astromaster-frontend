@@ -138,7 +138,7 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
     >
       {/* Row Header */}
       <div className="flex items-center justify-between mb-4 px-6 sm:px-0">
-        <div className="flex items-center gap-3">
+        <Link href={`/archiv-test/${category.id}`} className="flex items-center gap-3 group">
           <Image
             src={category.icon}
             alt={category.title}
@@ -146,11 +146,14 @@ function CategoryRow({ category, index }: { category: WikiCategory; index: numbe
             height={28}
             className="opacity-70"
           />
-          <h2 className="text-lg sm:text-xl font-semibold">{category.title}</h2>
+          <h2 className="text-lg sm:text-xl font-semibold group-hover:text-gold transition-colors">{category.title}</h2>
           <span className="text-xs text-muted bg-card px-2 py-0.5 rounded-full border border-border">
             {category.articles.length}
           </span>
-        </div>
+          <span className="text-xs text-muted group-hover:text-gold transition-colors hidden sm:inline">
+            Alle &rarr;
+          </span>
+        </Link>
 
         {/* Desktop scroll arrows */}
         <div className="hidden sm:flex gap-1">
