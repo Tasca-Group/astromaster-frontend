@@ -290,10 +290,10 @@ function WikiTeaser() {
 
         <AnimateOnScroll delay={0.3} className="text-center mt-10">
           <Link
-            href="/wiki"
+            href="/archiv"
             className="text-gold font-medium hover:underline"
           >
-            Alle Artikel im Wiki &rarr;
+            Alle Artikel im Sternarchiv &rarr;
           </Link>
         </AnimateOnScroll>
       </div>
