@@ -77,6 +77,13 @@ export default function AnalyseTestPage() {
           </p>
         </motion.div>
 
+        {/* Style Selector */}
+        <AnimateOnScroll>
+          <div className="mb-16">
+            <StyleSelector selected={designStyle} onSelect={setDesignStyle} />
+          </div>
+        </AnimateOnScroll>
+
         {/* Product Cards */}
         <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-24">
           <AnimateOnScroll>
@@ -104,13 +111,6 @@ export default function AnalyseTestPage() {
             />
           </AnimateOnScroll>
         </div>
-
-        {/* Style Selector */}
-        <AnimateOnScroll>
-          <div className="mb-24">
-            <StyleSelector selected={designStyle} onSelect={setDesignStyle} />
-          </div>
-        </AnimateOnScroll>
 
         {/* FAQ */}
         <AnimateOnScroll>
