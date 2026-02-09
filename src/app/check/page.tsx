@@ -203,6 +203,18 @@ export default function CheckPage() {
 
     try {
       const [res] = await Promise.all([gratisCheckExtended(data), minDelay]);
+      // Backend may return basic format (tropisch/siderisch) without extended fields
+      // Normalize: construct sonne from basic fields if missing
+      if (!res.sonne) {
+        res.sonne = {
+          tropisch: res.tropisch,
+          siderisch: res.siderisch,
+          abweichung: res.abweichung,
+        };
+      }
+      if (res.hat_uhrzeit === undefined) {
+        res.hat_uhrzeit = false;
+      }
       setResult(res);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Ein Fehler ist aufgetreten.");
@@ -319,15 +331,17 @@ export default function CheckPage() {
                 delay={0}
               />
 
-              {/* Mond — always (calculated from date) */}
-              <ZeichenCard
-                icon="&#9789;"
-                label="Dein Mond"
-                data={result.mond}
-                wikiLink="/wiki/siderische-astrologie"
-                wikiText="Was sagt der Mond über dich?"
-                delay={0.5}
-              />
+              {/* Mond — only if returned by API */}
+              {result.mond && (
+                <ZeichenCard
+                  icon="&#9789;"
+                  label="Dein Mond"
+                  data={result.mond}
+                  wikiLink="/wiki/siderische-astrologie"
+                  wikiText="Was sagt der Mond über dich?"
+                  delay={0.5}
+                />
+              )}
 
               {/* Aszendent — only with time */}
               <AnimatePresence>
