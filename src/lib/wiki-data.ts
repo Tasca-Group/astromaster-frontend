@@ -22,7 +22,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
     articles: [
       {
         title: "Siderische Astrologie",
-        href: "/wiki-test/siderische-astrologie",
+        href: "/wiki/siderische-astrologie",
         description: "Das astronomisch korrekte Sternzeichen-System mit Lahiri-Ayanamsa.",
         tags: ["Astrologie", "Siderisch", "Vedisch", "Anfänger"],
         sections: ["Was ist siderische Astrologie?", "Tropisch vs. Siderisch", "Die 13 siderischen Zeichen", "Ayanamsa erklärt", "Ophiuchus", "Geschichte", "Berechnung", "FAQ"],
@@ -30,7 +30,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Tropische Astrologie",
-        href: "/wiki-test/tropische-astrologie",
+        href: "/wiki/tropische-astrologie",
         description: "Das westliche Standardsystem — und warum es astronomisch nicht mehr stimmt.",
         tags: ["Astrologie", "Tropisch", "Westlich", "Anfänger"],
         sections: ["Was ist tropische Astrologie?", "Ursprung und Geschichte", "Die Jahreszeiten-Logik", "Kritik: Präzession", "Tropisch vs. Siderisch"],
@@ -38,7 +38,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die 12 Sternzeichen",
-        href: "/wiki-test/sternzeichen",
+        href: "/wiki/sternzeichen",
         description: "Alle Sternzeichen im Überblick — Eigenschaften, Elemente, Herrscher.",
         tags: ["Astrologie", "Sternzeichen", "Anfänger"],
         sections: ["Übersicht aller Zeichen", "Die Elemente", "Die Qualitäten", "Herrscherplaneten", "Siderisch vs. Tropisch"],
@@ -46,7 +46,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Planeten in der Astrologie",
-        href: "/wiki-test/planeten",
+        href: "/wiki/planeten",
         description: "Die 10 Planeten und ihre Bedeutung in deinem Geburtshoroskop.",
         tags: ["Astrologie", "Planeten", "Fortgeschritten"],
         sections: ["Die persönlichen Planeten", "Die sozialen Planeten", "Die transpersonalen Planeten", "Planeten in Zeichen", "Retrograde Planeten"],
@@ -54,7 +54,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die 12 Häuser",
-        href: "/wiki-test/haeuser",
+        href: "/wiki/haeuser",
         description: "Die 12 astrologischen Häuser — deine Lebensbereiche im Horoskop.",
         tags: ["Astrologie", "Häuser", "Fortgeschritten"],
         sections: ["Was sind Häuser?", "Die 12 Häuser im Überblick", "Häusersysteme", "Planeten in Häusern", "Leere Häuser"],
@@ -62,7 +62,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Aspekte erklärt",
-        href: "/wiki-test/aspekte",
+        href: "/wiki/aspekte",
         description: "Konjunktion, Trigon, Quadrat — wie Planeten miteinander kommunizieren.",
         tags: ["Astrologie", "Aspekte", "Fortgeschritten"],
         sections: ["Was sind Aspekte?", "Die 5 Hauptaspekte", "Harmonische vs. Spannungsaspekte", "Orbis und Exaktheit", "Aspekte deuten"],
@@ -70,7 +70,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Aszendent, Mond & Sonne",
-        href: "/wiki-test/aszendent-mond-sonne",
+        href: "/wiki/aszendent-mond-sonne",
         description: "Die drei wichtigsten Positionen in deinem Chart — einfach erklärt.",
         tags: ["Astrologie", "Anfänger", "Aszendent", "Mond", "Sonne"],
         sections: ["Die große Drei", "Das Sonnenzeichen", "Das Mondzeichen", "Der Aszendent", "Zusammenspiel"],
@@ -78,7 +78,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Was ist Präzession?",
-        href: "/wiki-test/praezession",
+        href: "/wiki/praezession",
         description: "Warum sich der Sternenhimmel verschiebt — und was das für dein Zeichen bedeutet.",
         tags: ["Astrologie", "Wissenschaft", "Präzession", "Anfänger"],
         sections: ["Das Phänomen", "24 Grad Verschiebung", "Auswirkung auf Sternzeichen", "Geschichte der Entdeckung", "Siderisch als Lösung"],
@@ -93,7 +93,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
     articles: [
       {
         title: "Numerologie Grundlagen",
-        href: "/wiki-test/numerologie",
+        href: "/wiki/numerologie",
         description: "Was deine Geburtszahlen über deinen Lebensweg verraten.",
         tags: ["Numerologie", "Anfänger", "Lebenszahl"],
         sections: ["Was ist Numerologie?", "Die Lebenszahl berechnen", "Die 9 Lebenszahlen", "Meisterzahlen", "Geschichte", "FAQ"],
@@ -101,7 +101,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Alle Lebenszahlen (1-9)",
-        href: "/wiki-test/lebenszahlen",
+        href: "/wiki/lebenszahlen",
         description: "Die Bedeutung jeder Lebenszahl — Stärken, Herausforderungen, Lebensweg.",
         tags: ["Numerologie", "Lebenszahl", "Anfänger"],
         sections: ["Lebenszahl 1", "Lebenszahl 2", "Lebenszahl 3", "Lebenszahl 4", "Lebenszahl 5", "Lebenszahl 6", "Lebenszahl 7", "Lebenszahl 8", "Lebenszahl 9"],
@@ -109,7 +109,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Meisterzahlen (11, 22, 33)",
-        href: "/wiki-test/meisterzahlen",
+        href: "/wiki/meisterzahlen",
         description: "Die seltenen Meisterzahlen und ihre besondere spirituelle Bedeutung.",
         tags: ["Numerologie", "Meisterzahlen", "Fortgeschritten"],
         sections: ["Was sind Meisterzahlen?", "Meisterzahl 11", "Meisterzahl 22", "Meisterzahl 33", "Erkennung und Deutung"],
@@ -124,7 +124,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
     articles: [
       {
         title: "Ägyptische Dekane",
-        href: "/wiki-test/aegyptische-dekane",
+        href: "/wiki/aegyptische-dekane",
         description: "4.000 Jahre alte Weisheit — dein kosmischer Wächter aus dem Alten Ägypten.",
         tags: ["Ägypten", "Dekane", "Mystik", "Anfänger"],
         sections: ["Was sind Dekane?", "Die 36 Dekane", "Ägyptische Gottheiten", "Dekan-System erklärt", "Geschichte", "FAQ"],
@@ -132,7 +132,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die Gottheiten",
-        href: "/wiki-test/gottheiten",
+        href: "/wiki/gottheiten",
         description: "Die 36 ägyptischen Götter und ihre Zuordnung zu den Dekanen.",
         tags: ["Ägypten", "Götter", "Mystik"],
         sections: ["Übersicht der Gottheiten", "Die Sonnengötter", "Die Mondgötter", "Zuordnung nach Dekaden", "Bedeutung heute"],
@@ -140,7 +140,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Das Dekansystem erklärt",
-        href: "/wiki-test/dekansystem",
+        href: "/wiki/dekansystem",
         description: "Wie das Dekansystem funktioniert — von der Astronomie zur Mythologie.",
         tags: ["Ägypten", "Dekane", "Fortgeschritten"],
         sections: ["Aufbau des Systems", "10-Grad-Einteilung", "Verbindung zur Astrologie", "Historischer Kontext", "Moderne Anwendung"],
@@ -155,7 +155,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
     articles: [
       {
         title: "Human Design Grundlagen",
-        href: "/wiki-test/human-design",
+        href: "/wiki/human-design",
         description: "Dein energetischer Bauplan für authentische Entscheidungen.",
         tags: ["Human Design", "Anfänger", "Energie"],
         sections: ["Was ist Human Design?", "Die 5 Typen", "Strategie & Autorität", "Die 9 Zentren", "Geschichte", "FAQ"],
@@ -163,7 +163,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die 5 Typen",
-        href: "/wiki-test/human-design-typen",
+        href: "/wiki/human-design-typen",
         description: "Generator, Manifestor, Projektor, Reflektor, MG — welcher bist du?",
         tags: ["Human Design", "Typen", "Anfänger"],
         sections: ["Generator", "Manifestierender Generator", "Projektor", "Manifestor", "Reflektor", "Deinen Typ leben"],
@@ -171,7 +171,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die 9 Zentren",
-        href: "/wiki-test/human-design-zentren",
+        href: "/wiki/human-design-zentren",
         description: "Die Energiezentren in deinem Bodygraph — definiert oder offen?",
         tags: ["Human Design", "Zentren", "Fortgeschritten"],
         sections: ["Überblick der Zentren", "Kopfzentrum", "Ajna", "Kehle", "G-Zentrum", "Herz", "Milz", "Sakral", "Emotionen", "Wurzel"],
@@ -179,7 +179,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Strategie & Autorität",
-        href: "/wiki-test/strategie-autoritaet",
+        href: "/wiki/strategie-autoritaet",
         description: "Wie du laut deinem Design richtig Entscheidungen triffst.",
         tags: ["Human Design", "Strategie", "Autorität", "Fortgeschritten"],
         sections: ["Was ist Strategie?", "Was ist Autorität?", "Die 7 Autoritäten", "Strategie nach Typ", "Praxis-Tipps"],
@@ -194,7 +194,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
     articles: [
       {
         title: "Elementar-Analyse",
-        href: "/wiki-test/elementar-analyse",
+        href: "/wiki/elementar-analyse",
         description: "Die Balance der Elemente in deinem Chart zeigt deine natürlichen Stärken.",
         tags: ["Elemente", "Anfänger", "Feuer", "Erde", "Luft", "Wasser"],
         sections: ["Was sind die Elemente?", "Feuer", "Erde", "Luft", "Wasser", "Element-Balance", "Elemente und Sternzeichen", "FAQ"],
@@ -202,7 +202,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die 4 Elemente im Detail",
-        href: "/wiki-test/vier-elemente",
+        href: "/wiki/vier-elemente",
         description: "Feuer, Erde, Luft und Wasser — ihre Qualitäten und Entsprechungen.",
         tags: ["Elemente", "Feuer", "Erde", "Luft", "Wasser"],
         sections: ["Feuer-Element", "Erde-Element", "Luft-Element", "Wasser-Element", "Wechselwirkungen"],
@@ -210,7 +210,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Element-Balance",
-        href: "/wiki-test/element-balance",
+        href: "/wiki/element-balance",
         description: "Was es bedeutet, wenn ein Element dominiert — oder fehlt.",
         tags: ["Elemente", "Balance", "Fortgeschritten"],
         sections: ["Element-Verteilung lesen", "Dominantes Element", "Fehlendes Element", "Balance herstellen", "Praktische Tipps"],
@@ -225,7 +225,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
     articles: [
       {
         title: "Was sind Chakren?",
-        href: "/wiki-test/chakren",
+        href: "/wiki/chakren",
         description: "Einführung in das Chakra-System — Ursprung, Bedeutung und Praxis.",
         tags: ["Chakren", "Anfänger", "Spiritualität", "Energie"],
         sections: ["Was sind Chakren?", "Ursprung", "Die 7 Hauptchakren", "Chakren und der Körper", "Blockierte vs. offene Chakren", "Chakren und Human Design", "FAQ"],
@@ -233,7 +233,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Die 7 Hauptchakren",
-        href: "/wiki-test/sieben-chakren",
+        href: "/wiki/sieben-chakren",
         description: "Alle 7 Chakren im Überblick — Position, Farbe, Thema, Element.",
         tags: ["Chakren", "Anfänger", "Übersicht"],
         sections: ["Wurzelchakra", "Sakralchakra", "Solarplexuschakra", "Herzchakra", "Halschakra", "Stirnchakra", "Kronenchakra"],
@@ -241,7 +241,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Wurzelchakra (Muladhara)",
-        href: "/wiki-test/wurzelchakra",
+        href: "/wiki/wurzelchakra",
         description: "Das erste Chakra — Sicherheit, Erdung, Überleben.",
         tags: ["Chakren", "Wurzelchakra", "Muladhara", "Erdung"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],
@@ -249,7 +249,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Sakralchakra (Svadhisthana)",
-        href: "/wiki-test/sakralchakra",
+        href: "/wiki/sakralchakra",
         description: "Das zweite Chakra — Kreativität, Emotionen, Sexualität.",
         tags: ["Chakren", "Sakralchakra", "Svadhisthana", "Kreativität"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],
@@ -257,7 +257,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Solarplexuschakra (Manipura)",
-        href: "/wiki-test/solarplexuschakra",
+        href: "/wiki/solarplexuschakra",
         description: "Das dritte Chakra — Willenskraft, Selbstvertrauen, Transformation.",
         tags: ["Chakren", "Solarplexuschakra", "Manipura", "Willenskraft"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],
@@ -265,7 +265,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Herzchakra (Anahata)",
-        href: "/wiki-test/herzchakra",
+        href: "/wiki/herzchakra",
         description: "Das vierte Chakra — Liebe, Mitgefühl, Heilung.",
         tags: ["Chakren", "Herzchakra", "Anahata", "Liebe"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],
@@ -273,7 +273,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Halschakra (Vishuddha)",
-        href: "/wiki-test/halschakra",
+        href: "/wiki/halschakra",
         description: "Das fünfte Chakra — Kommunikation, Ausdruck, Wahrheit.",
         tags: ["Chakren", "Halschakra", "Vishuddha", "Kommunikation"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],
@@ -281,7 +281,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Stirnchakra (Ajna)",
-        href: "/wiki-test/stirnchakra",
+        href: "/wiki/stirnchakra",
         description: "Das sechste Chakra — Intuition, Weisheit, inneres Sehen.",
         tags: ["Chakren", "Stirnchakra", "Ajna", "Intuition", "Drittes Auge"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],
@@ -289,7 +289,7 @@ export const WIKI_CATEGORIES: WikiCategory[] = [
       },
       {
         title: "Kronenchakra (Sahasrara)",
-        href: "/wiki-test/kronenchakra",
+        href: "/wiki/kronenchakra",
         description: "Das siebte Chakra — Spiritualität, Erleuchtung, kosmisches Bewusstsein.",
         tags: ["Chakren", "Kronenchakra", "Sahasrara", "Spiritualität"],
         sections: ["Sanskrit-Name", "Position und Farbe", "Kernthemen", "Beschreibung", "Blockade", "Balance", "Übungen", "Edelsteine"],

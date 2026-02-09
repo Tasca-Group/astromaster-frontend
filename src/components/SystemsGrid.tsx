@@ -10,35 +10,35 @@ const systems = [
     icon: "/images/icons/siderisch.svg",
     description:
       "Das astronomisch korrekte System. Berechnet nach den tatsächlichen Sternpositionen mit Lahiri-Ayanamsa.",
-    wiki: "/wiki-test/siderische-astrologie",
+    wiki: "/wiki/siderische-astrologie",
   },
   {
     title: "Numerologie",
     icon: "/images/icons/numerologie.svg",
     description:
       "Deine Lebenszahl entschlüsselt deinen Lebensweg, verborgene Talente und karmische Lektionen.",
-    wiki: "/wiki-test/numerologie",
+    wiki: "/wiki/numerologie",
   },
   {
     title: "Ägyptische Dekane",
     icon: "/images/icons/dekane.svg",
     description:
       "37 Dekane offenbaren deinen kosmischen Wächter &mdash; eine 4.000 Jahre alte Tradition aus dem Alten Ägypten.",
-    wiki: "/wiki-test/aegyptische-dekane",
+    wiki: "/wiki/aegyptische-dekane",
   },
   {
     title: "Human Design",
     icon: "/images/icons/human-design.svg",
     description:
       "Dein energetischer Bauplan: Typ, Strategie und Autorität für authentische Entscheidungen.",
-    wiki: "/wiki-test/human-design",
+    wiki: "/wiki/human-design",
   },
   {
     title: "Elementar-Analyse",
     icon: "/images/icons/tropisch.svg",
     description:
       "Die Balance der fünf Elemente in deinem Chart zeigt deine natürlichen Stärken und blinden Flecken.",
-    wiki: "/wiki-test/elementar-analyse",
+    wiki: "/wiki/elementar-analyse",
   },
 ];
 

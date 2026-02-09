@@ -73,7 +73,7 @@ export default function WikiLayout({
       <div className="max-w-6xl mx-auto">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-sm text-muted mb-8">
-          <Link href="/wiki-test" className="hover:text-gold transition-colors">
+          <Link href="/wiki" className="hover:text-gold transition-colors">
             Wiki
           </Link>
           <span className="text-border">/</span>
