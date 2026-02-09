@@ -22,6 +22,8 @@ interface OrderData {
   paket: "normal" | "pro";
   familyMembers: FamilyMember[];
   prefillGeburtsdatum?: string;
+  prefillGeburtszeit?: string;
+  prefillGeburtsort?: string;
 }
 
 function CheckoutContent() {
@@ -63,6 +65,15 @@ function CheckoutContent() {
               jahr: parts[2],
             }));
           }
+        }
+        if (data.prefillGeburtszeit) {
+          const tp = data.prefillGeburtszeit.split(":");
+          if (tp.length === 2) {
+            setForm((f) => ({ ...f, stunde: tp[0], minute: tp[1] }));
+          }
+        }
+        if (data.prefillGeburtsort) {
+          setForm((f) => ({ ...f, geburtsort: data.prefillGeburtsort || "" }));
         }
         setLoaded(true);
         return;

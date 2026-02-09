@@ -56,9 +56,11 @@ export function calculatePricing(
 
 interface Props {
   prefillGeburtsdatum?: string;
+  prefillGeburtszeit?: string;
+  prefillGeburtsort?: string;
 }
 
-export default function OrderFlow({ prefillGeburtsdatum }: Props) {
+export default function OrderFlow({ prefillGeburtsdatum, prefillGeburtszeit, prefillGeburtsort }: Props) {
   const router = useRouter();
   const [design, setDesign] = useState<"dark" | "light">("dark");
   const [paket, setPaket] = useState<"normal" | "pro">("pro");
@@ -73,6 +75,8 @@ export default function OrderFlow({ prefillGeburtsdatum }: Props) {
       paket,
       familyMembers,
       prefillGeburtsdatum,
+      prefillGeburtszeit,
+      prefillGeburtsort,
     };
     sessionStorage.setItem("astro-order", JSON.stringify(orderData));
     router.push("/checkout");

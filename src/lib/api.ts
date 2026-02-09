@@ -7,6 +7,19 @@ export interface GratisCheckResponse {
   ophiuchus: boolean;
 }
 
+export interface ZeichenVergleich {
+  tropisch: string;
+  siderisch: string;
+  abweichung: boolean;
+}
+
+export interface GratisCheckExtendedResponse extends GratisCheckResponse {
+  sonne: ZeichenVergleich;
+  mond: ZeichenVergleich;
+  aszendent: ZeichenVergleich | null;
+  hat_uhrzeit: boolean;
+}
+
 export interface BestellungResponse {
   id: string;
   status: string;
@@ -29,6 +42,27 @@ export async function gratisCheck(geburtsdatum: string): Promise<GratisCheckResp
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ geburtsdatum }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || "Fehler beim Check");
+  }
+  return res.json();
+}
+
+export async function gratisCheckExtended(data: {
+  geburtsdatum: string;
+  geburtszeit?: string;
+  geburtsort?: string;
+}): Promise<GratisCheckExtendedResponse> {
+  const body: Record<string, string> = { geburtsdatum: data.geburtsdatum };
+  if (data.geburtszeit) body.geburtszeit = data.geburtszeit;
+  if (data.geburtsort) body.geburtsort = data.geburtsort;
+
+  const res = await fetch(`${API_URL}/api/gratis-check`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
